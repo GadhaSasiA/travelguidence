@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{% block title %}{%endblock title%}
+{%block content%}
+{% if results %}
+<style>
+    .cards{width: 500px;height: 500px;background-color: rgb(248, 159, 159);color:rgb(29, 18, 3);margin-top: 80px;margin-left: 350px;
+    text-align: center;}
+    h1{color: brown;}
+</style>
+<div class="cards">
+  {% for p in results %}
+     <h1> {{ p.place_name }}</p></h1>
+       {{ p.about }}</h5>
+       {{ p.features }}</h5>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No results found.</p>
+{% endif %}
+{% endblock content %}

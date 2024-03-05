@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{%block title%}home{%endblock title%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home{width: 1250px;height: 700px; background-color: azure;}
+        h3{color: rgb(246, 246, 248);text-align: center;}
+        h5{color: rgb(5, 82, 112);text-align: center;}
+        p{margin-left: 10px;text-align: center;}
+        .ind{width: 1240px; height: 300px;}
+        .home h4{color: brown; margin-left: 100px;}
+    .i1 button,.i2 button,.i3 button,.i4 button,.i5 button,.i6 button{width: 200px;background-color: black;color: azure;border-radius: 6px;}
+    .i1{float: left;border-radius: 6px;margin-left: 6px;}
+    .i2,.i3,.i4,.i5,.i6{float: right;margin-right: 6px;border-radius: 6px;}
+    h2{color: rgb(15, 235, 224); text-align: center;margin-top: 10px;}
+    .aaa{width: 1240px;height:84px;}
+
+    </style>
+</head>
+<body>
+  <div class="aaa">
+
+  </div>
+    <div class="home">
+  
+    <h5>welcome to GKtravels</h5>
+    <p>Explore the whole world with us. we are always ready to be with you to make un forgettable travel memmories.<br>
+        Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, <br>
+        automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.</p><br><br>
+    <h2>Trending travel destinations</h2>
+    <div class="ind">
+    <div class="i1">
+      <h3>Istabul</h3>
+      <img src="places/image01.jpg" width="200px" height="150px"><br>
+      <a href=""><button type="submit">about</button></a>
+    </div>
+    <div class="i2">
+      <h3>Goa</h3>
+      <img src="places/image03.jpg" width="200px" height="150px"><br>
+      <button type="submit">about</button>
+    </div>
+    <div class="i3">
+      <h3>Shimla</h3> 
+      <img src="places/image04.jpg" width="200px" height="150px"><br>
+      <button type="submit">about</button>
+    </div>
+    <div class="i4">
+      <h3>Jaipur</h3>
+      <img src="places/image05.jpg" width="200px" height="150px"><br>
+      <button type="submit">about</button>
+    </div>
+  
+    <div class="i5">
+      <h3>Thailand</h3>
+      <img src="places/image06.jpg" width="200px" height="150px"><br>
+      <button type="submit">about</button>
+    </div>
+    <div class="i6">
+      <h3>Delhi</h3>
+      <img src="places/image07.jpg" width="200px" height="150px"><br>
+      <button type="submit">about</button>
+    </div>
+  </div>
+  </div>
+{%endblock content%}
+</body>
+</html>

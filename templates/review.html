@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block title%}review{%endblock title%}
+{%block content%}
+<style>
+    body{background-color:antiquewhite;}
+    .rr{height: 130px;}
+</style>
+<body>
+    <div class="rr">
+
+</div>
+    <div class="container">
+        <h2>Write a Review</h2>
+        <form action="{%url 'review'%}" method="post">
+        <div class="form-group">
+                <h5>Place name:{{pl.place_name}}</h5>
+                <label for="opinions">Your Opinions:</label>
+                <textarea class="form-control" id="" rows="4" placeholder="Write your opinions here"></textarea>
+         
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+</body>
+{%endblock content%}

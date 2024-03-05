@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock title%}
+{% block content %}
+
+<style>
+body{background-color: blue;}
+.row{width: 800px; height: 500px;margin-left: 200px;}
+.card{margin-left: 10px;}
+img{margin-top: 10px;}
+</style>
+<div class="row">
+{% for k in kl %}
+    <!-- <div class="card bg-dark text-light" style="width: 18rem;">
+      <div class="card-body ">
+        <img src="{{ k.image_place }}" class="card-img-top" height="300px" alt="...">
+        <p class="card-text">{{ k.placename }}</p>
+        <h5 class="card-title">{{ k.about_place}}</h5>
+        <h5 class="card-title">{{ k.place_features }}</h5>
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div> -->
+    <div class="card mb-3">
+      <img src="{{ k.image_place }}"class="card-img-top" width="500px" height="300px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ k.placename }}</h5>
+        <p class="card-text">{{ k.about_place}}</p>
+        <p class="card-text">{{ k.place_features}}</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock content %}
+
+

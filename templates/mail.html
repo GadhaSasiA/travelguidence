@@ -1,0 +1,17 @@
+{%block title%}{%endblock title%}
+{%block content%}
+<style>
+    body{background-color: brown;}
+    .container{background-color: rgb(185, 85, 85); margin-left: 300px;width: 500px;text-align: center;}
+    h1{text-align: center;}
+</style>
+<h1 class="text-center">Make mail</h1><hr>
+<div class="container w-50 p-3 text center my-5 bg-secondary">
+  <form action=""method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <br>
+    <button type="submit" class="btn btn-primary mb-4">Submit</button>
+  </form>
+  </div>
+{%endblock content%}

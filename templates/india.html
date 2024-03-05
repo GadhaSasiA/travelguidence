@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block title%}india{%endblock title%}
+{%block content%}
+
+<style>
+    body{background-color: blue;}
+    .row{width: 800px; height: 500px;margin-left: 200px;}
+    .card{margin-left: 10px;}
+    img{margin-top: 10px;}
+    </style>
+    <div class="row">
+    {% for i in ind %}
+        <div class="card mb-3">
+          <img src="{{ i.img_place }}" class="card-img-top" height="400px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ i.destination_name }}</h5>
+            <p class="card-text">{{ i.place_details}}</p>
+            <p class="card-text">{{ i.features }}</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endblock content %}
+    
+    
+    

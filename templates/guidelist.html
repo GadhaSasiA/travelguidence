@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}index{%endblock title%}
+{%block content%}
+<style>
+    body{background-color:antiquewhite;}
+    .row{width:800px; height: 400px;margin-left: 200px;margin-top: 30px;}
+    .card{margin-left: 10px;margin-top: 50px;}
+    img{margin-top: 10px;}
+    </style>
+
+<div class="row">
+    {%for g in guide%}
+    <div class="card" style="width: 18rem;">
+        <img src="{{g.guide_photo}}" class="card-img-top" height="400px" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{g.guide_name}}</h5>
+        <p class="card-text">{{g.about_guide}}.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock content%}

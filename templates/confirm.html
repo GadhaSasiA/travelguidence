@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock title%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{background-color: bisque;width: 400px;height: 200px; margin-left: 300px;}
+        .aaa{height: 140px;}
+    </style>
+</head>
+<body>
+    <div class="aaa"></div>
+    <div class="con">
+        {% if user.is_authenticated %}
+          Hello <b>{{ user.username }}</b>You are successfully Logged in
+        {% else %}
+        You need to log in to access this content.
+        
+        {% endif %} 
+    </div> 
+</body>
+</html>
+
+{% endblock content%}

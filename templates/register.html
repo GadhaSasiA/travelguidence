@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block title%}Register{%endblock title%}
+{%block content%}
+<style>
+    /* body{background-color: black;} */
+    h1{text-align: center;color: rgb(4, 88, 60);}
+    .reg button{background-color: black;color: rgb(49, 29, 4);margin-left: 200px;}
+    .reg{border: 1px solid white;width: 500px;color: rgb(49, 3, 3);margin-left: 300px;}
+    .aaa{height: 150px;}
+</style>
+<div class="aaa">
+
+</div>
+<div class="reg">
+    <h1>Register </h1>
+    <form method="POST" action="{%url 'register'%}">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+    </form>
+   
+</div>
+{%endblock content%} 
