@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{% block title %}{%endblock title%}
+{%block content%}
+<style>
+    /* body{background-color: rgb(97, 87, 105);width: 100%;height: 600px;}
+     */
+     body{width: 1340px;height: auto;background-color:antiquewhite}
+    .train{margin-top:px;width: 1250px;height: 300px;margin-left:50px;background-color: rgb(158, 199, 199); ;}
+    .train form{width: 1200px;height: 200px;background-color: rgba(250, 242, 242, 0.3);margin-left: 20px;}
+    .train h3{margin-left: 110px;}
+    .t1{width: 250px;float: left;margin-left: 220px;}
+    .t2{width: 250px;float: left;margin-left: -5px;}
+    .t3{width: 250px;float: left;}
+    .t4{width: 220px;float: right;}
+
+    .t4 input{background-color: rgba(255, 255, 255, 0.2);}
+    .tt1{margin-left: 10px;margin-top: 10px;}
+    .train button{margin-right: 190px;margin-left: 180px;background-color: rgba(255, 255, 255, 0.0);}
+    label, input {background-color: rgba(255, 255, 255, 0.0);}
+    select {background-color: rgba(255, 255, 255, 0.0); }
+    select option {background-color: rgba(255, 255, 255, 0.0); }
+    .trainpage{width:1250px;height: 400px;margin-left: 50px;background-color: rgb(158, 199, 199);}
+    .trainpage h2{color:rgba(255, 255, 255, 0.7);margin-top: -380px ;margin-left: 30px;}
+    .trainpage1{width: 1250px;height: 600px;margin-left: 50px;background-color: rgb(158, 199, 199);}
+    .trainpage1 p{margin-left: 30px;}
+    .trainpage1 h3{margin-left: 30px;margin-top: 65px;}
+    hr{width: 1000px;margin-left: 110px;}
+</style> 
+
+<div class="trainpage">
+    <img src="https://www.onetravel.com/going-places/wp-content/uploads/2019/10/modes-of-transport-trains.jpg"width="1250px" height="400px">
+    <h2><b><i>Train informations</i></b></h2>
+</div><br>
+<div class="trainpage1">
+    <h3><i>Trains</i></h3>
+    <p><i>Probably the second-fastest mode of transport other than a plane, trains will get you where you need to go as quickly as possible on land. There’s no traffic, and they’re generally running on a timely schedule with minimum stops along the way. You know exactly where you’re getting on and exactly where you’ll be getting off. Also, they usually have bathrooms included, which can be a huge plus on a long-haul ride</i></p>
+    <h3><b><i>Train cons</i></b></h3>
+    <p><i>Because trains are usually the fastest mode of land travel, they’re also usually the most expensive. There are obviously all types of price options depending on your expected level of comfort and seat selection, but they are generally more expensive than buses. Also, because they don’t stop in many places, when you get on a train you’re on it for the long haul. In addition, trains are large and therefore have lots of people. This means that you should have your most precious belongings (passport, phone, wallet) on your person at all times to avoid the possibility of being pickpocketed.</i></p>
+    <h3><b><i>When to Opt for a Train</i></b></h3>
+    <p><i>Trains are a lovely middle ground between booking a pricey flight and riding a cheap bus. They’re a somewhat conservative budgetary option that doesn’t have to compromise comfort and speed for the money. If you have a week or two on your trip and a moderate budget, we suggest picking a train and saving a bit of time</i></p>
+
+</div>
+
+
+<div class="train">
+   <h3><b><i>Train Booking</i></b></h3> <hr>
+  <form method="post" action="{%url 'train'%}">
+    {%csrf_token%}
+    <div class="t5">
+        <label class="tkk"><b><i>Username</i></b></label><br>
+            <select id="username" name="username" class="book5">
+                <option value="" selected disabled>Select user</option>
+                {% for choice in form.username.field.choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+            </select>
+    </div>
+    <div class="t1">
+        <label class="tt1"><b><i>FROM:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label><br><br>{{form.from_place }}
+        <br><br>
+    </div>
+    <div class="t2">
+        <label class="tt1"><b><i>TO:<br>&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label><br>{{form.to_place}}
+    </div>
+    <div class="t3">
+        <label class="tt1"><b><i>DATE & TIME:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label><br><br>{{form.date_and_time}}
+        <br><b></b><br>
+    </div>
+    <div class="t4">
+        <label class="tt1"><b><i>CLASS<br>&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label><br>{{form.select_class}}
+        <br><b></b><br>
+    </div><br><br>
+    <button type="submit">Submit</button>
+
+</form>
+<a href="{%url 'trans'%}"> <button class="btn btn-dark">Back</button></a>
+
+</div>
+
+{%endblock content%}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Bus{% endblock title %}
+{% block content %}
+<style>
+  body{background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);background-size: cover;background-repeat: no-repeat;}
+    .card{width: 400px;height:500px;margin-left: 20px;margin-top: 10px;background-color: black;color: antiquewhite;}
+    .card img{height: 300px;}
+    .aaa{margin-top: -30px;}
+    .row{width: 1300px;margin-left:-110px; margin-top:50px;}
+    .last{margin-left: -130px;}
+</style>
+<div class="aaa">
+
+</div>
+<div class="container">
+  <div class="row">
+      {% for bs in bus %}
+      <div class="col-md-4 mb-4">
+          <div class="card">
+              <img src="{{ bs.bus_img.url }}" class="card-img-top" alt="Bus Image"height="300px">
+              <div class="card-body">
+                  <h5 class="card-title">{{ bs.bus_name }}</h5>
+                  <p class="card-text"><b>AC/Non-AC:</b> {{ bs.ac_or_non_ac }}</p>
+                  <p class="card-text"><b>Seating Capacity:</b> {{bs.seating_capacity }}</p>
+                  <p class="card-text"><b>Rent:</b> {{ bs.bus_rent }}</p>
+                  <a href="{% url 'bus_booking' %}" class="btn btn-primary">Book Now</a>
+                </div>
+          </div>
+      </div>
+      {% endfor %}
+
+
+</div>
+{% endblock content %}

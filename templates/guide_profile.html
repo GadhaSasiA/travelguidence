@@ -1,0 +1,62 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Details</title>
+    <style>
+      body{background-color: antiquewhite;}
+      .up{width: 400px;height: 450px;margin-top: 20px;margin-left: 450px;border: 1px solid black;}
+      h1,a{margin-left: 20px;}
+      .up img{border-radius: 15px;margin-left: 180px;}
+      .up h2{text-align: center;}
+      .up h4{margin-left: 100px;}
+      .up a{text-decoration: none;background-color: rgb(221, 208, 192);border-radius: 6px;color: black;margin-left: 100px;
+      border: 1px solid black;}
+      h1,h2,a{margin-left: 20px;}
+      .ep a{margin-left: 130px;}
+
+      .usebar img{border-radius: 10px;margin-top: 20px;margin-left: 30px;}
+      .usebar h3{margin-left:106px;margin-top: -30px;}
+      .usebar a{text-decoration: none;}
+            </style>
+</head>
+<body>
+    <div class="usebar">
+        <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+        <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+    </div>
+  <div class="up">
+    <h1>Your Registration Details</h1>
+
+    <h2>Profile Image</h2>
+    {% if guide_profile.profile_image %}
+        <img src="{{ guide_profile.profile_image.url }}" width="40px" height="40px" alt="Profile Image">
+    {% else %}
+        <p>No profile image available</p>
+    {% endif %}
+
+    <h4>Username &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{ guide_profile.username }}</h4>
+
+    <h4>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{ guide_profile.gender }}</h4>
+
+    <h4>Place &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{ guide_profile.place }}</h4>
+
+    <h4>Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{guide_profile.email }}</h4>
+
+    <!-- You might not want to display passwords in the HTML page -->
+    <!-- <h2>Password:</h2>
+    <p>{{ user_profile.password1 }}</p>
+    <p>{{ user_profile.password2 }}</p> -->
+
+    <!-- Add more fields as needed -->
+
+    <!-- Example link to go back -->
+    <a href="{%url 'index'%}">Go back to your dashboard</a><br><br>
+    <div class="ep">
+     <a href="{%url 'edit_gprofile'%}">Edit Your Profile</a>
+    </div>
+</div>
+</body>
+</html>

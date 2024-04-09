@@ -1,0 +1,128 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock title%}
+{% block content %}
+<style>
+     body{background-color: aliceblue;width: 1340px;height: 1000px;}
+    .loc{background-color: rgb(178, 184, 187);width: 1265px;height:500px;margin-left: 45px;}
+    .local{width: 1265px;height: 800px;}
+    .local img{margin-top: -15px;}
+    .local h1{margin-top: -330px;color: antiquewhite;margin-left: 100px;}
+    .local1{width: 600px;height: 80px;margin-left: 340px;background-color:white;margin-top: -270px;border-radius: 10px;}
+    .loc1{width: 200px;height: 80px;float: left;background-color: rgba(255, 255, 255, 0.2)}
+    .loc2{width: 200px;height: 80px;float: left;background-color: rgba(255, 255, 255, 0.2)}
+    .loc3{width: 200px;height: 80px;float: left;background-color: rgba(255, 255, 255, 0.2)}
+    .loc1 h5{margin-top:4px;margin-left: 60px;}
+    .loc2 h5{margin-top:12px;margin-left: 60px;}
+    .loc3 h5{margin-top:4px;margin-left: 15px;}
+    .local1 a{text-decoration: none;color: rgb(95, 83, 66);}
+    .loc1 img{margin-left: 25px;}
+    .loc2 img{margin-left: 55px;}
+    .loc3 img{margin-left: 30px;}
+
+    .bus {width: 1265px;height: 800px;background-color: antiquewhite;margin-left: 45px;}
+    .transport{width: 1265px;height: 300px;background-color: rgb(178, 184, 187);margin-top: 120px;margin-left: 45px;}
+    .transport1{width: 300px;height: 300px;float: left;margin-left: 180px;background-color: rgba(255, 255, 255, 0.4);}
+    .transport2{width: 300px;height: 300px;float: left ;background-color: rgba(255, 255, 255, 0.3);}
+    .transport3{width: 300px;height: 300px;float: left ;background-color: rgba(255, 255, 255, 0.4);}
+    .transport1 img{margin-left: 90px;margin-top: 20px;}
+    .transport1 h4{margin-left: 60px;margin-top: 5px;}
+    .transport1 p{margin-left: 10px;}
+    .transport2 p{margin-left: 10px;}
+    .transport3 p{margin-left: 10px;}
+
+    .transport2 h4{margin-left: 70px; margin-top: 5px;}
+    .transport2 img{margin-left: 90px;margin-top: 20px;}
+    .transport3 h4{margin-left: 70px; margin-top: 5px;}
+    .transport3 img{margin-left: 90px;margin-top: 20px;}
+
+    .pll{width:1265px;height: 30px;background-color: rgb(178, 184, 187);margin-left: 45px ;}
+    .buscard1{width: 1265px;height: 400px;background-color: rgb(178, 184, 187);margin-top:0px;margin-left: 45px;}
+    .card{margin-left: 180px;background-color:  rgba(255, 255, 255, 0.3) ;}
+    .buscard2{width: 1265px;height: 400px;background-color: rgb(178, 184, 187);margin-top:0px;margin-left: 45px;}
+    .buscard2 img{margin-top: 50px;margin-left: 20px;}
+
+    
+
+
+
+
+
+
+</style>
+<body>
+    <div class="loc">
+        <div class="local">
+            <img src="https://t4.ftcdn.net/jpg/02/69/47/51/360_F_269475198_k41qahrZ1j4RK1sarncMiFHpcmE2qllQ.jpg"width=1265px height="450px">
+            <h1><i>Your Journy<br>of Exploration<br>Begins Here!</i></h1>
+        </div>
+        <div class="local1">
+            <div class="loc1">
+              <img src="https://www.shutterstock.com/image-vector/bus-head-logo-600nw-673063534.jpg"width=100px height="50px">
+              <a href="{%url 'bus'%}"><h5><b><i>BUS</i></b></h5></a>
+            </div>
+            <div class="loc2">
+                <img src="https://www.nicepng.com/png/detail/97-975783_car-outlined-vehicle-side-view-comments-car-drawing.png"width=40px height="40px">
+                <a href=""><h5><b><i>CAB</i></b></h5></a>
+            </div>
+            <div class="loc3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRhSJ1eRiok5eQkEMNm6AhUPMpmi6vVWfvBb5a_IjmwXDJb7btlyrPIYnboi94WNosZ5g&usqp=CAU" width=100px height="50px">
+                <a href=""><h5><b><i>TRAVELLER</i></b></h5></a>
+            </div>
+        </div>
+    </div>
+
+<div class="transport">
+    <div class="transport1">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHtjWSaZqcDmsuOetHrXJK83fv_agvRRmRAQ&usqp=CAU"width=100px height="100px">
+     <h4>Great Selection</h4>
+     <p><i>A good transport system is very essential in the world today,if you are planning a trip our travel guidence are the great selection for you </i></p>
+    </div>
+    <div class="transport2">
+     <img src="https://toppng.com/uploads/preview/silicon-staffing-virtual-assistants-are-highlu-ethical-high-quality-icon-11562905961utmhgyf0iq.png"width=100px height="100px">
+     <h4>High quality</h4>
+     <p><i>Our agency is always connected to you while your travelling,providing high quality services to you</i></p>
+    </div>
+    <div class="transport3">
+      <img src="https://pngimg.com/d/price_label_PNG26.png"width=100px height="100px">
+      <h4>Lowest Price</h4>
+      <p><i>We are ready to give you high quality services with affordable prices,nd also giving offers on vaccation times</i></p>
+    </div>
+  </div>
+   <div class="pll">
+
+   </div>
+   <div class="buscard1">
+        <div class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="data:image/jpeg;base64,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" class="img-fluid rounded-start" alt="..." width="250px">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">BUS</h5>
+                <p class="card-text">Although they come with some cons, buses are definitely the most cost-effective way to travel for the gap-year backpacker who doesn’t have a lot of money to spend. If you find yourself with two weeks or more and need to count your change, bite the bullet and take the bus. Ultimately, it will be worth it. We recommend checking company reviews online to see what you’re getting into, and that doesn’t mean going to the bus company’s self-promoted website. Do your research and go in with few expectations..</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="buscard2">
+        <div class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://media.istockphoto.com/id/519870714/photo/taxi.jpg?s=612x612&w=0&k=20&c=mzlqm5eisvu-B7hCyOK3LAsR4ugFTsHtC2kMWUmbA0Y="class="img-fluid rounded-start" alt="..." width="250px">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h5 class="card-title">CAB</h5>
+                <p class="card-text">Although they come with some cons, buses are definitely the most cost-effective way to travel for the gap-year backpacker who doesn’t have a lot of money to spend. If you find yourself with two weeks or more and need to count your change, bite the bullet and take the bus. Ultimately, it will be worth it. We recommend checking company reviews online to see what you’re getting into, and that doesn’t mean going to the bus company’s self-promoted website. Do your research and go in with few expectations..</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+{% endblock content %}

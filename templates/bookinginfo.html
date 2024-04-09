@@ -1,0 +1,47 @@
+{% block title %}{% endblock title %}
+{%load static%}
+{% block content %}
+<style>
+  body{background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);background-size: cover;background-repeat: no-repeat;}
+    .card{width: 500px;height: 330px;margin-left: 20px;margin-top: 10px;
+      border: 1px solid black;background-color:rgba(250, 242, 242, 0.7);color: rgb(20, 12, 1);float: left;}
+    .aaa{margin-top: -30px;}
+    .row{width: 1280px;margin-left:10px; margin-top:50px;float: left;}
+    .row h3,p,h4,h2{margin-left: 10px;}
+  .bookbar img{border-radius: 10px;margin-top: 35px;}
+  .bookbar h3{margin-left: 106px;margin-top: -30px;}
+  .bookbar a{text-decoration: none;}
+   
+</style>
+<div class="aaa">
+
+</div>
+<div class="bookbar">
+  <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+  <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+</div>
+<div class="row">
+  <h2><b><i>Travel Bookings</i></b></h2><hr>
+{%for bk in info%}
+ <div class="card">
+    <div class="card-header">
+      <h2>Booking info</h2><hr>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{bk.users_name}}</h3>
+      <p class="card-text"><B> EMAIL ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</B>{{bk.email_id}}</p>
+      <p class="card-text"><b>PHONE NUM&nbsp;&nbsp;&nbsp;&nbsp; :</b>{{bk.phone_number}}</p>
+      <p class="card-text"><b>DATE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b>{{bk.date}} </p>
+      <p class="card-text"><b>SELECTED DESTINATIONS&nbsp;&nbsp;&nbsp;&nbsp;:</b> {{bk.select_Popular_destinations}}</p>
+      <p class="card-text">{{bk.select_india_destinations}}</p>
+      <p class="card-text">{{bk.select_kerala_destinations}}</p>
+      <p class="card-text"><b>GUIDE: {{bk.guide_name}}</b></p>
+      <p class="card-text"><b>GUIDE: {{bk.guidename}}</b></p>
+
+
+    </div>
+  </div>
+{%endfor%}
+
+</div>
+{% endblock content %}

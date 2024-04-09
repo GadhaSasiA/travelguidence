@@ -1,0 +1,28 @@
+<!-- {% extends 'base.html' %}
+{% block title %}guide{% endblock title %}
+{% block content %}
+<style>
+    .g1{width: 1350px;height: 600px;}
+   .g1 img{width: 1350px;height: 600px;margin-left: -55px; margin-top: 70px;}
+   .g2{margin-top: -650px;}
+</style>
+{% if request.session.gid %}
+<div class="g1">
+  <img src="https://st2.depositphotos.com/1312284/48274/i/450/depositphotos_482742302-stock-photo-flat-lay-design-travel-concept.jpg" >
+ <div class="g2">
+   <div class="collapse navbar-collapse justify-content-centercol-md-8 navbar-collapse-3">
+    <ul class="navbar-nav justify-content-center  fw-bold">
+      <li class="nav-item active">
+        <a href="{%url 'bookinginfo'%}" class="nav-link text-dark" href=""><i>Booking info</i> </a>
+      </li>
+      <li class="nav-item">
+        <a href="{%url 'revshow'%}" class="nav-link text-dark" href=""><i>Reviews</i></a>
+      </li>
+      <li class="nav-item">
+        <a href="{%url 'revshow'%}" class="nav-link text-dark" href=""><i>Complaints</i></a>
+      </li>
+     
+    </ul>
+  </div>
+</div>
+{%endblock content%} -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Bus Bookings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">User Bus Bookings</h1>
+        <div class="row">
+            {% for booking in bookings %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Booking ID: {{ booking.id }}</h5>
+                        <p class="card-text"><strong>Your Name:</strong> {{ booking.yourname }}</p>
+                        <p class="card-text"><strong>Phone Number:</strong> {{ booking.phonenum }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ booking.Email }}</p>
+                        <p class="card-text"><strong>Number of Persons:</strong> {{ booking.numof_persons }}</p>
+                        <p class="card-text"><strong>Address:</strong> {{ booking.address }}</p>
+                        <p class="card-text"><strong>Vehicle:</strong> {{ booking.choose_vehicles }}</p>
+                        <p class="card-text"><strong>Pickup Date:</strong> {{ booking.pickup_date }}</p>
+                        <p class="card-text"><strong>Pickup Location:</strong> {{ booking.picup_at }}</p>
+                        <p class="card-text"><strong>Drop-off Date:</strong> {{ booking.drop_date }}</p>
+                        <p class="card-text"><strong>Drop-off Location:</strong> {{ booking.drop_at }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

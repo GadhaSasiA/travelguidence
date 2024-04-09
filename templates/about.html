@@ -1,4 +1,5 @@
 {%extends 'base.html'%}
+{%load static%}
 {%block title%}about{%endblock title%}
 {%block content%}
 <!DOCTYPE html>
@@ -8,21 +9,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    body{background-image: url(https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?cs=srgb&dl=pexels-nubia-navarro-%28nubikini%29-386009.jpg&fm=jpg);background-size: cover;background-repeat: no-repeat;}
-        .about{width: 600px;height: 270px;margin-left: 300px;}
-        h2{text-align: center;color: rgb(3, 104, 82);margin-left: 5px;}
-        p{color: rgb(24, 8, 68);margin-left: 5px;}
+        body{height: 1500px;background-image: url(https://images.inc.com/uploaded_files/image/1920x1080/getty_583734066_335273.jpg);background-repeat: no-repeat;background-size: cover;height: 1200px;}
+        .about{width: 1200px;height: 700px;margin-top:-15px;background-color:antiquewhite;margin-left:70px;}
+        h2{text-align: center;color: rgb(18, 156, 126);margin-left: 5px;margin-top:0px;}
+        .about1{width:1000px;height: 500px;margin-left: 110px;}
+        /* .about1 img{width: 1350px;height: 500px;} */
+        .about1 p{color: rgb(24, 8, 68);}
+        .aaa{height: 90px;}
+        /* .ab1{margin-left: 10px; margin-top: -50;} */
+        .card{background-color: rgba(250, 242, 242, 0.3)}
+        .ab1 img{float: left;}
+        .ab1.h5{float: right;}
+        .ab1 p{margin-top:-10px;}
+        .ab2{float: right;margin-top: -210px;}
+        .ab1{margin-top: -50px;margin-left: 200px;background-color: rgba(250, 242, 242, 0.0)}
+        .ab2{margin-right:350px;}
+        .finalbar{width: 1350px;height: 100px;background-color: rgb(41, 37, 37);margin-top: 450px;}
+        .finalbar h2{color: aliceblue;text-align: center;}
+
+        .landpage{width:1200px;height: 300px;background-color: antiquewhite;}
+
+        .aboutus{width:1200px;height: 350px;margin-left: 70px;background-color: rgb(253, 232, 205)}
+        .aboutus1{width:500px;background-color: bisque;float: left;height: 300px;margin-left: 100px;margin-top: 10px;}
+        .aboutus2{width:500px;background-color: bisque;float: left;height: 300px;margin-top: 10px;}
+        .aboutus1 img{margin-top: 10px;margin-left: 50px;border-radius: 80px;}
+        .aboutus1 p,h3{margin-left: 20px;}
+
+        .aboutuspage{width: 1200px;height: 200px;background-color: rgba(250, 242, 242, 0.5);margin-left: 70px;}
+        .abpage1{width:400px;height: 200px;float: left;}
+        .abpage1 img{margin-left: 10px;margin-top: 60px;float: left;border-radius: 50px;}
+        .abpage1 h3{margin-left: 100px;}
+        .aboutuspage p{margin-left: 30px;}
+
+        .abpage2{width:400px;height: 200px;float: left;}
+        .abpage2 img{margin-left: 10px;margin-top: 60px;float: left;border-radius: 50px;}
+
+        .abpage3{width:400px;height: 200px;float: left;}
+        .abpage3 img{margin-left: 10px;margin-top: 60px;float: left;border-radius: 50px;}
+
+
+
+
+
+
     </style>
 </head>
 <body>
-    <div class="about">
-        <h2>welcome to GK TRAVELS</h2>
-        <P>Here we are sharing about our page and providing services,<br>startes this page since 2020 .our page give 100%guarenty to help you onexploring your dream place
-        travels are always make our self happy and fresh .we will be there always for make your trip unforgettable</P>
+    <div class="aaa"></div>
+  <div class="about">      
 
+    <div class="about1"><br><br><br>
+      <h2><b><i>welcome to GK TRAVELS</i></b></h2>
+      <P><i>Here we are sharing about our page and providing services,startes this page since 2020 .our page give 100%guarenty to help you onexploring your dream place
+      travels are always make our self happy and fresh .we will be there always for make your trip unforgettable</i></P>
+     <h2><I>Introduce Our Company</I></h2>
+     <P><i> we are passionate about helping people explore the world. <br>Our mission is to make travel accessible and enjoyable for everyone.”<i></i></P>
+     <p><i> “Our company was founded by two friends who shared a love of travel. After years of working in the corporate world, we decided to follow our passion and start our own travel company. We wanted to create a business that would help others experience the same joy and wonder that we felt when we traveled.”</i></p>
+    
+    
     </div>
-  
-    </div>
+    <div class="ab1">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">GK TRAVEL GUIDENCE</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Malappuram</h6>
+          <p class="card-text">Since 2010</p>
+          <a href=""><img src="{% static 'image/logophn.png'%}" alt="Your Logo" width="30px" height="30px"></a>
+          <h5><b><i>+91 9876543210</i></b></h5><br>
+          <a href=""><img src="{% static 'image/logo2.png'%}" alt="Your Logo" width="30px" height="30px"></a>
+          <h5><b><i>0483 7654392</i></b></h5>
+          <a href="#" class="card-link"></a>
+        </div>
+      </div>
+  </div>
+
+  <div class="ab2">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">GK TRAVEL GUIDENCE</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Malappuram</h6>
+          <p class="card-text"></p>
+          <h5><b><i>Num.of Guides:20 </i></b></h5>
+          <h5><b><i></i></b></h5>
+          <a href="#" class="card-link"></a>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="aboutus">
+  <div class="aboutus1">
+    <img src="https://www.vhv.rs/dpng/d/459-4592092_about-us-icon-about-us-png-transparent-png.png" width=100px height="100px">
+     <h3><b><i>Who We Are</i></b></h3>
+     <p><i>Founded in 2002,We are a corporate travel company providing travel management solutions to large domestic and globel companies.We offer travelling service which imcludes ticketing,transportation,hotel reservation and foreign exchanges,travel insurence,visa assistance,airport services and much more</i> </p>
+  </div>
+  <div class="aboutus2">
+   <img src="https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?s=612x612&w=0&k=20&c=MewnsAhbeGRcMBN9_ZKhThmqPK6c8nCT8XYk5ZM_hdg="width=500px height="300px">
+  </div>
+</div>
+<div class="aboutuspage">
+  <div class="abpage1">
+    <img src="https://media.istockphoto.com/id/1140998839/vector/magnifier-with-eye-outline-icon-find-icon-investigate-concept-symbol-eye-with-magnifying.jpg?s=612x612&w=0&k=20&c=L1talIpewFsMJAErPGP0YS-Hwt5CDcjd_mMfnbFAx-o="width="100px" height="100px">&nbsp;&nbsp;&nbsp;&nbsp;
+    <h3><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VISION</i></b></h3>
+    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;To be the trusted travel agency &nbsp;&nbsp;&nbsp;&nbsp;recognized by our clints for delivering &nbsp;&nbsp;&nbsp;&nbsp;efficient travel services</i></p>
+  </div>
+  <div class="abpage2">
+    <img src="https://cdn.vectorstock.com/i/preview-1x/33/04/target-core-values-icon-simple-value-vector-45843304.jpg" width="100px"height="100px">&nbsp;&nbsp;&nbsp;&nbsp;
+    <h3><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MISSION</i></b></h3>
+    <p><i>&nbsp;&nbsp;&nbsp;&nbsp;To serve our clients with enhanced &nbsp;&nbsp;&nbsp;&nbsp;travel experience by providing quality &nbsp;&nbsp;&nbsp;&nbsp;services that address their travel needs</i></p>
+  </div>
+  <div class="abpage3">
+   <img src="https://www.shutterstock.com/image-vector/modern-value-icon-top-service-600nw-1442135234.jpg" width="100px" height="100px">&nbsp;&nbsp;&nbsp;&nbsp;
+   <h3><b><i>&nbsp;&nbsp;&nbsp;&nbsp;CORE VALUES</i></b></h3>
+   <p><i>&nbsp;&nbsp;&nbsp;&nbsp;>Client Satisfaction<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;>Valued Teamwork<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;>Integrity<br>
+   </p>
+
+  </div>
+</div>
+
+
 </body>
 </html>
 {%endblock content%}

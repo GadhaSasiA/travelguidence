@@ -1,0 +1,42 @@
+{% block title %}{% endblock title %}
+{%load static%}
+{% block content %}
+<style>
+  body{background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);background-size: cover;background-repeat: no-repeat;}
+  .card{width: 380px;height: 250px;margin-left: 20px; margin-top: 10px;background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;float: left;}
+  .aaa{margin-top: -30px;}
+  .row{width: 1350px; margin-left: 10px; margin-top:50px;}
+  .card-body p{background-color: rgba(255, 255, 255, 0.0);}
+  .g1 ul{margin-top:-580px;}
+  .last1{margin-top: 1000px;}
+  .row h5,p,h4{margin-left: 10px;}
+  .combar img{border-radius: 10px;margin-top: 35px;}
+  .combar h3{margin-left: 106px;margin-top: -30px;}
+  .combar a{text-decoration: none;}
+</style>
+<div class="aaa">
+
+</div>
+<div class="combar">
+  <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+  <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+</div>
+<div class="row">
+ <h2><b><i>Complaints</i></b></h2><hr>
+  {%for c in comp%}
+   <div class="card">
+      <div class="card-header">
+        <h4>Complaint info</h4><hr>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Name: {{c.your_name}}</h5>
+        <p class="card-text"><B> EMAIL ID: </B>{{c.your_Email}}</p>
+        <p class="card-text"><b>Complaint </b>{{c.complaint}}</p>
+
+      </div>
+    </div>
+  {%endfor%}
+
+</div>
+{% endblock content %}

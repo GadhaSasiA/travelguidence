@@ -1,0 +1,52 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <style>
+        body{background-color: antiquewhite;width: 1350px;height: 700px;}
+        .bdbar img{border-radius: 10px;margin-top: 35px;margin-left: 30px;}
+        .bdbar h3{margin-left: 80px;margin-top: -30px;color: black;}
+        .bdbar a{text-decoration: none;}
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bdbar">
+        <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="100px" height="50px"></a>
+        <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+      </div>
+    <div class="container">
+        <h1 class="mt-5 mb-4">  Your Bus Booking Details</h1><hr><br><br>
+        <div class="row">
+            {% for booking in bookings %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Booking ID: {{ booking.id }}</h5>
+                        <p class="card-text"><strong>Username:</strong> {{ booking.username }}</p>
+                        <p class="card-text"><strong>User's Name:</strong> {{ booking.yourname }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ booking.Email }}</p>
+                        <p class="card-text"><strong>Phone Number:</strong> {{ booking.phonenum }}</p>
+                        <p class="card-text"><strong>No.of persons:</strong> {{ booking.numof_persons }}</p>
+                        <p class="card-text"><strong>Vehicle:</strong> {{ booking.choose_vehicles }}</p>
+                        <p class="card-text"><strong>Pickup Date:</strong> {{ booking.pickup_date }}</p>
+                        <p class="card-text"><strong>Pickup Location:</strong> {{ booking.picup_at }}</p>
+                        <p class="card-text"><strong>Drop Date:</strong> {{ booking.drop_date }}</p>
+                        <p class="card-text"><strong>Drop Location:</strong> {{ booking.drop_at }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% if bookings.count == 0 %}
+            <div class="col-md-12">
+                <p>No bookings available.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>

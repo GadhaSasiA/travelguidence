@@ -1,34 +1,110 @@
-{%extends 'base.html'%}
-{%block title%}{%endblock title%}
+{% extends 'base.html' %}
+{% block title %}Booking{% endblock title %}
 {% block content %}
 <style>
-    /* .book{background-color: antiquewhite;width: 600px;height: 400px;margin-left: 300px;color:brown;}
-    form{text-align: center;margin-top: 10px;}
-    .book h3{color: brown;text-align: center;margin-top: 10px;} */
-    .abc{width: 600px; height: 500px;margin-left: 250px;}
-    .z{height: 86px;}
-    .abc h5{color: rgb(14, 13, 13);}
-    form{margin-left: 10px;text-align: center;}
+    body{background-image: url(https://images.inc.com/uploaded_files/image/1920x1080/getty_583734066_335273.jpg)
+        ;background-size: cover;background-repeat: no-repeat;}
+    .z {height: 100px;}
+    .bookings{height: 700px;}
+    .bookings form{width: 500px;height: 540px; margin-left: 300px; background-color: rgba(250, 242, 242, 0.2);
+        margin-top: 10px;border-radius: 20px;}
+   .book1{margin-left: 100px; margin-top: 20px;width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .bk1,.bk2,.bk3,.bk4,.bk5,.bk6,.bk8{margin-left: 20px;}
+   /* .bk1{margin-top: -10px;} */
+   .book2{margin-left: 112px;margin-top: -10px;width: 240px; background-color: rgba(250, 242, 242, 0.2) }
+   .book3{margin-left: 89px;margin-top: 15px; width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .book4{margin-left: 78px;margin-top:15px; width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .book5{margin-left: 14px;margin-top:15px;width: 240px ; background-color: rgba(250, 242, 242, 0.2)}
+   .book6{margin-left: 33px;margin-top:15px; width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .book7{margin-left: 23px;margin-top:15px; width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .book8{margin-left: 123px;margin-top:15px; width: 240px; background-color: rgba(250, 242, 242, 0.2)}
+   .bookings form button{margin-left: 200px; background-color: rgba(250, 242, 242, 0.3);margin-top: 8px;}
+   .make{width: 400px;height: 540px; background-color: rgba(250, 242, 242, 0.5);float: right;margin-top: -540px;margin-right: 300px;}
+   .make h3{margin-left:-130px;margin-top: 10px;}
+   .make h6{margin-left:150px;margin-top: 150px;color: rgb(226, 166, 87);}
+   .bkk{margin-top:80px;margin-left: 20px;}
+   #username{margin-left: 95px;}
+
+
+
+
+
+
 </style>
+<body>
+<div class="z"></div>
 
-<div class="z">
-</div>
-<div class="abc">
-    <h5>BOOKING</h5>
+  <div class="bookings">
+    <form method="post" action="{%url 'booking'%}">
+        {% csrf_token %}
+        <label class="bkk"><b><i>Username</i></b></label>
+        <select id="username" name="username" class="book5">
+            <option value="" selected disabled>Select user</option>
+            {% for choice in form.username.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %} 
 
- <div class="book">
-    <h3>Booking</h3>
-<form method="post" action="{%url 'booking'%}">
-{%csrf_token%}
-{{form.as_p}}
-<a href="{%url 'booking_details'%}"><button type="button" value="submit"> Submit</button>
-</form>
-</div>
-{%endblock content %} 
+        </select><br>
 
+        <label class="bk1"><b><i>Username</i></b></label><input type="text" class="book1" id="users_name" name="users_name" required><br><br>
 
+        <label class="bk2"><b><i>Email id</i></b></label><input type="email"  class="book2" id="email_id" name="email_id" required><br>
 
+        <label class="bk3"><b><i>Phone num</i></b></label><input type="number"  class="book3" id="phone_number" name="phone_number" pattern="[0-9]{10}" required><br>
 
+        <label class="bk4"><b><i>Date & Time</i></b></label><input type="datetime-local"  class="book4" id="date" name="date" required><br>
 
+        <label class="bk5"><b><i>Popular destinations</i></b></label>
+        <select id="select_Popular_destinations" name="select_Popular_destinations" class="book5">
+            <option value="" selected disabled>Select Popular Destination</option>
+            {% for choice in form.select_Popular_destinations.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %} 
 
+        </select><br>
 
+        <label class="bk5"><b><i>India destinations</i></b></label>
+        <select id="Select_india_destinations" name="Select_india_destinations"  class="book6">
+            <option value="" selected disabled>Select India Destination</option>
+            {% for choice in form.Select_india_destinations.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %}    
+        </select><br>
+
+        <label class="bk5"><b><i>Kerala destinations</i></b></label>
+        <select id="Select_kerala_destinations" name="Select_kerala_destinations" class="book7">
+            <option value="" selected disabled>Select Kerala Destination</option>
+            {% for choice in form.Select_kerala_destinations.field.choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label class="bk6"><b><i>Guide</i></b></label>
+        <select id="guide_name" name="guide_name" class="book8">
+    
+            <option value="" selected disabled>Select Guide</option>
+            {% for choice in form.guide_name.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %} 
+       </select><br>
+       <label class="bk6"><b><i>Guide2</i></b></label>
+        <select id="guide_name" name="guide_name" class="book8">
+    
+            <option value="" selected disabled>Select Guide</option>
+            {% for choice in form.guidename.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %} 
+       </select><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div class="make">
+        <h3><b><i>Make your reservation</i></b></h3>
+        <h6><i>"Travel is the only thing <br>you buy that makes you <br>richer"</i></h6>
+
+    </div>
+ </div>
+</body>
+</html>
+
+{% endblock content %}

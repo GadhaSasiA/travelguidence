@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+User Bookings
+{% endblock title %}
+
+{% block content %}
+<style>
+    body{background-color: antiquewhite;}
+    .u_booking{margin-top: 80px;width: 1200px;margin-left: 20px;}
+    .row{width:900px;height: 500px;margin-left: 20px;}
+    .u_booking h2{margin-left: 30px;}
+    .card{background-color: rgba(255, 255, 255, 0.2);}
+</style>
+
+<div class="u_booking">
+  <h2>Your Bookings</h2>
+  <hr>
+  {% if user_bookings %}
+    <div class="row">
+      {% for booking in user_bookings %}
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Booking Information</h5>
+            </div>
+            <div class="card-body">
+              <p><strong>Name:</strong> {{ booking.users_name }}</p>
+              <p><strong>Email:</strong> {{ booking.email_id }}</p>
+              <p><strong>Phone:</strong> {{ booking.phone_number }}</p>
+              <p><strong>Date:</strong> {{ booking.date }}</p>
+              <p><strong>Selected Destinations:</strong> {{ booking.select_Popular_destinations }}</p>
+              <p>{{ booking.select_india_destinations }}</p>
+              <p>{{ booking.select_kerala_destinations }}</p>
+              <p><strong>Guide:</strong> {{ booking.guide_name }}</p>
+              <p><strong>Guide:</strong> {{ booking.guidename }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No bookings found.</p>
+  {% endif %}
+</div>
+
+{% endblock content %}

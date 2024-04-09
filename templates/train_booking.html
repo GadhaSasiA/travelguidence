@@ -1,0 +1,43 @@
+{% block title %}{% endblock title %}
+{%load static%}
+{% block content %}
+<style>
+     body{background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);background-size: cover;background-repeat: no-repeat;}
+    .card{width: 380px;height: 280px;margin-left: 20px;margin-top: 10px;background-color: rgba(255, 255, 255, 0.6)
+      ;float: left;border: 1px solid black;}
+    .aaa{margin-top: -30px;}
+    .row{width: 1280px;margin-left:10px; margin-top:50px;}
+    .card-body p{color: rgb(34, 33, 31);}
+    .tbar img{border-radius: 10px;margin-top: 35px;}
+    .tbar h3{margin-left: 106px;margin-top: -30px;}
+    .tbar a{text-decoration: none;}
+    .row h2,h3,p,h4{margin-left: 20px;}
+</style>
+<div class="aaa">
+
+</div>
+<div class="tbar">
+  <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+  <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+</div>
+<div class="row">
+  <h2><b><i>Train Bookings</i></b></h2><hr>
+{%for t in train%}
+ <div class="card">
+    <div class="card-header">
+      <h4>Train booking info</h4><hr>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">From: {{t.from_username}}</h5>
+      <h3 class="card-title">From: {{t.from_place}}</h5>
+      <p class="card-text"><B>To: </B>{{t.to_place}}</p>
+      <p class="card-text"><b>Date and time: </b>{{t.date_and_time}}</p>
+      <p class="card-text"><b>Class: </b>{{t.class}}</p>
+
+
+    </div>
+  </div>
+{%endfor%}
+
+</div>
+{% endblock content %}

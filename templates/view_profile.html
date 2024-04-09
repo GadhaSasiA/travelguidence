@@ -1,0 +1,25 @@
+<!-- view_profile.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p><strong>Username:</strong> {{ profile.user.username }}</p>
+    <p><strong>gender:</strong> {{ profile.gender }}</p>
+    <p><strong>place:</strong> {{ profile.place}}</p>
+    <p><strong>place:</strong> {{ profile.email}}</p>
+
+
+    {% if profile.profile_image %}
+        <img src="{{ profile.profile_image.url }}" alt="{{ profile.user.username }}'s Profile Image" style="max-width: 200px;">
+    {% else %}
+        <p>No profile image available</p>
+    {% endif %}
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+</body>
+</html> -->

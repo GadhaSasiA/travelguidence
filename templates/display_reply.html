@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+    <style>
+        body{background-color: rgb(189, 188, 186);}
+        .dis{width: 1000px;height: 600px;margin-left: 30px;}
+        .card{width: 300px;height: 180px;margin-left: 30px; margin-top: 20px;background-color:  rgba(255, 255, 255, 0.5);border-radius: 10px;border: 1px solid black;}
+        .card-body{margin-left: 30px;}
+        .dis h1{margin-left: 20px;}
+        .disbar img{border-radius: 10px;margin-top: 0px;}
+        .disbar h3{margin-left: 106px;margin-top: -30px;}
+        .disbar a{text-decoration: none;color: rgb(34, 34, 33);}
+    </style>
+</head>
+<body>
+    <div class="disbar">
+        <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+        <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+    </div><br>
+  <div class="dis">
+        <h1>Check your Messages</h1><hr>
+        {% for msge in reply_messages %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">Sender: {{ msge.sender }}</h3>
+                    <h4 class="card-title">Recipient: {{ msge.recipient }}</h4>
+                    <p class="card-text">Message: {{ msge.message_reply}}</p>
+                </div>
+            </div>
+        {% endfor %}
+  </div>
+</body>
+</html>

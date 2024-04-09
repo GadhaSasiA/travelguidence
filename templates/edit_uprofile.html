@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+      body{background-color: antiquewhite;}
+      .up{width: 370px;height: 500px;margin-top: 20px;margin-left: 400px;border: 1px solid black;}
+      img,h4{margin-left: 50px;}
+      h1,h2,a{margin-left: 20px;}
+      label{margin-left: 80px;}
+        #id_username{margin-left: 80px;}
+        #id_gender{margin-left: 80px;}
+        #id_place{margin-left: 80px;}
+        #id_email{margin-left: 80px;}
+        .up button{margin-left: 80px;}
+        #id_profile_image{margin-left: 80px;}
+        h1{text-align: center;}
+    </style>
+</head>
+<body>
+  <div class="up">
+    <h1>Edit Profile</h1>
+
+    <!-- Form for editing profile -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Username -->
+        <label for="id_username">Username:</label><br>
+        <input type="text" name="username" id="id_username" value="{{ form.username.value }}"><br><br>
+
+        <!-- Gender -->
+        <label for="id_gender">Gender:</label><br>
+        <input type="text" name="gender" id="id_gender" value="{{ form.instance.gender }}"><br><br>
+
+        <!-- Place -->
+        <label for="id_place">Place:</label><br>
+        <input type="text" name="place" id="id_place" value="{{ form.instance.place }}"><br><br>
+
+        <!-- Email -->
+        <label for="id_email">Email:</label><br>
+        <input type="email" name="email" id="id_email" value="{{ form.instance.email }}"><br><br>
+
+        <!-- Profile Image -->
+        <label for="id_profile_image">Profile Image:</label><br>
+        <input type="file" name="profile_image" id="id_profile_image"><br><br>
+
+        <!-- Submit button -->
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <!-- Example link to go back -->
+    <a href="{% url 'index' %}">Go back to your profile</a>
+</div>
+</body>
+</html>

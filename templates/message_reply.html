@@ -1,0 +1,16 @@
+<!-- send_message.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Message</title>
+</head>
+<body>
+    <h1>Send Message</h1>
+    <form method="post" action="{%url 'message_reply'%}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

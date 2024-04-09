@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Sent</title>
+    <style>
+      body{background-color: rgb(103, 134, 134);}
+      .dmsend{width: 1360px;height: 200px; margin-top: 30px; background-color: rgb(136, 177, 164);margin-left: -7px;}
+      .dmsend h1,h4{margin-left: 10px;}
+      .dmsendbtn{margin-left: 20px;}
+      .dmsend a{text-decoration: none;margin-left: 20px;color: antiquewhite; background-color: rgb(117, 165, 173);border-radius: 5px;height: 40px;}
+    </style>
+</head>
+<body>
+  <div class="dmsend">
+    <h1>Message Sent</h1>
+    <h4><i>Your message has been sent successfully.</i></h4>
+    <a href="{% url 'guidelist'%}" class="btn btn-primary">Back To Guide List</a>
+  </div>
+    <h1>Your Messages</h1>
+    {%if user_messages%}
+        <p>Number of messages: {{ user_messages|length }}</p> <!-- Debugging: Display number of messages -->
+        {%for message in user_messages%}
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ message.recipient }}</h5> <!-- Make sure recipient attribute is correct -->
+              <p class="card-text">{{ message.message_content }}</p> <!-- Make sure message_content attribute is correct -->
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        {%endfor%}
+    {%else%}
+        <p>No messages to display.</p> <!-- Debugging: Display message if user_messages is empty -->
+    {%endif%}
+</body>
+</html>

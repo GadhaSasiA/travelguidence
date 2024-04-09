@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Train Booking Details</h1>
+        <div class="row">
+            {% for train in trains %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Booking ID: {{ train.id }}</h5>
+                        <p class="card-text"><strong>Username:</strong> {{ train.username }}</p>
+                        <p class="card-text"><strong>From:</strong> {{ train.from_place }}</p>
+                        <p class="card-text"><strong>To:</strong> {{ train.to_place }}</p>
+                        <p class="card-text"><strong>Date and Time:</strong> {{ train.date_and_time }}</p>
+                        <p class="card-text"><strong>Class:</strong> {{ train.select_class }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

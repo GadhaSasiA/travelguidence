@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+User Profile
+{% endblock title %}
+
+{% block content %}
+<style>
+  /* Add your CSS styles here */
+</style>
+
+<div class="container">
+  <h2>User Profile</h2>
+  <hr>
+  <h3>Favorite Destinations</h3>
+  <div class="row">
+    {% for favorite in user_favorites %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="{{ favorite.popular.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ favorite.popular.place_name }}</h5>
+          <!-- Add any additional details you want to display -->
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>No favorite destinations found.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}complaints{% endblock title %}
+{% block content %}
+
+<style>
+/* body{background-color:black ;} */
+body{background-image: url(https://images.inc.com/uploaded_files/image/1920x1080/getty_583734066_335273.jpg)
+        ;background-size: cover;background-repeat: no-repeat;}
+.comp{width: 500px; height: 600px;margin-left: 400px;background-color: rgba(250, 242, 242, 0.3);margin-top: 1px;}
+.aaa{height: 100px;}
+form{text-align: center;text-decoration: none;background-color: rgba(250, 242, 242, 0.3)}
+.for
+.cc2{margin-left: 10px;}
+.c2{margin-left: 10px;background-color: rgba(250, 242, 242, 0.3)}
+.c1,.c3{background-color: rgba(250, 242, 242, 0.3)}
+.ta{background-color: rgba(250, 242, 242, 0.3)}
+.c3{width: 400px;height: 200px;}
+.area textarea{background-color: rgba(250, 242, 242, 0.0);margin-left:3px;width: 435px;}
+
+label, input {
+background-color: rgba(255, 255, 255, 0.2);}
+
+
+
+</style>
+<div class="aaa"></div>
+<div class="comp">
+    <h2></h2>
+    <form method="post" action="{%url 'complaints'%}">
+        <h3><b><i>Submit your Complaints</i></b></h3><br>
+        {% csrf_token %}
+        <label class="cc1"><b><i>Your name:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label>{{form.your_name}}
+        <br><br>
+        <label class="cc2"><b><i>Email id:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label>{{form.your_Email}}
+        <br><b></b><br>
+        <label for="complaint" class="cc3"><b><i>Complaint:</i></b></label>
+        <!-- <textarea id="complaint" name="complaint" class="c3"></textarea> -->
+        <div class="area">{{form.complaint}}</div>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{%endblock content%}

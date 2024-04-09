@@ -3,29 +3,40 @@
 {% block content %}
 
 <style>
-body{background-color: blue;}
-.row{width: 800px; height: 500px;margin-left: 200px;}
-.card{margin-left: 10px;}
-img{margin-top: 10px;}
+body{background-color:bisque}
+.row{width:1300px; height: 1000px;margin-left: 40px;}
+.card{margin-left: 20px;margin-top: 20px;width: 400px;height: 500px;}
+.card img{margin-top:10px;height: 400px;}
+h2{text-align: center; margin-top: 50px;}
+.aaa{height: 50px;}
+.last{margin-top:4630px;}
+
+
 </style>
 <div class="row">
+  <div class="aaa"></div>
+  <h2><b>Keralas popular places</b></h2>
 {% for k in kl %}
-    <!-- <div class="card bg-dark text-light" style="width: 18rem;">
-      <div class="card-body ">
-        <img src="{{ k.image_place }}" class="card-img-top" height="300px" alt="...">
-        <p class="card-text">{{ k.placename }}</p>
-        <h5 class="card-title">{{ k.about_place}}</h5>
-        <h5 class="card-title">{{ k.place_features }}</h5>
-        <a href="#" class="btn btn-primary">Select</a>
-      </div>
-    </div> -->
+    
     <div class="card mb-3">
       <img src="{{ k.image_place }}"class="card-img-top" width="500px" height="300px" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ k.placename }}</h5>
-        <p class="card-text">{{ k.about_place}}</p>
-        <p class="card-text">{{ k.place_features}}</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <!-- <p class="card-text">{{ k.about_place}}</p>
+        <p class="card-text">{{ k.place_features}}</p> -->
+        <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+        <a href="{% url 'kerala_about' k.id %}" class="btn btn-dark">About</a>
+        <a href="{% url 'review'%}" class="btn btn-dark">Review</a>
+
+        {% if k.is_favorite %}
+        <a href="{% url 'remove_fav' k.id %}" class="btn btn-danger">
+        <i class="fas fa-heart"></i></a>
+
+        {% else %}
+        <a href="{% url 'add_fav' k.id %}" class="btn btn-primary">
+          <i class="fas fa-heart"></i></a>
+        {% endif %}
+
       </div>
     </div>
   {% endfor %}

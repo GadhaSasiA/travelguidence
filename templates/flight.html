@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}flight details{% endblock title %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: antiquewhite;margin-left: 25px;width:1250px;height: 1000px;}
+        .flight{width: 1240px;height: 700px;margin-top: 140px;margin-left: 30px;}
+        .flight p{margin-left: 10px;margin-right: 10px;}
+        h3{margin-top: 50px;margin-left: 20px;}
+        .plain{width: 1240px;height: 400px;margin-left: 30px;background-color: rgb(99, 181, 187);}
+        .plain h3{margin-top:-350px;color:rgba(250, 242, 242, 0.5) ;margin-left: 500px;}
+        .last{margin-left: -30px;}
+    </style>
+</head>
+<body>
+    <div class="plain">
+        <img src="https://www.onetravel.com/going-places/wp-content/uploads/2019/10/Modes-of-transport-planes.jpg"width=1240px height="400px">
+        <h3><b><i>Flight informations</i></b></h3><br<<br>
+
+    </div>
+
+<div class="flight">
+    <p>Flight status of an airline informs passengers about the updates and changes regarding its schedule. The flight status information is available on all airline websites and sometimes, it is downloadable in PDF/Excel formats too. Even though an airline’s arrival and departure time information on their website is accurate, changes in weather can delay or reschedule a flight.
+    The Passenger Name Record (PNR) contains details about the route of flight. A passenger acquires a PNR number once he/she purchases a flight ticket. A PNR record also has information of the passenger’s contact details and preferences of seats, meal choices and many more. A Passenger Name Record is an alphanumeric code that is securely stored in the Computer Reservation System (CRS) of an airline. The PNR status of a flight can be checked on the airline’s website through PNR code.<br>
+    <br>
+    Also you can Web Check-in or Inquire about flights.<br><br>
+
+    If you are planning for international Trip or Trip with in india from any destination, This Flight status will give You information Minute by Minute. All Info mentioned will support you to plan a trip in timely manner. By just having this feature you can easily check flight status which is accessible from your phone too.
+    <br<<br>
+    In this internet age, all kind of travel information is there on the computer screen. Online reservation is clearly being preferred by everyone since it saves time, money and effort. Most domestic and international airlines now have their authentic online website which gives multiple options for cheap airline ticket reservation to suit your special travel needs. Since airline reservation has become online, it is a matter of few minutes in which you can make any airline enquiry.
+    <br><br>
+    The official website of many airlines provides relevant information regarding the airlines status. While sitting on your computer desk you can log on and directly check airline status from the net. You can make airline inquiry and find about the airline ticket status, and get your discounts accordingly. At the last minute you can avail maximum cheap ticket discounts if the airline has vacant seats on their flight schedule. You no longer have to go to the travel agents or middle men for relevant information.
+
+    If you want to know everything about your flight, just log in to PNR Status of the airlines and details would be in front of your screen. PNR Status enquiry is the best way of gathering the confirmation about your flight. So when you fly with any Airlines, you should check the airline PNR Status before flying. The PNR number is provided to you at the time when you purchase the ticket and is useful in making airline pnr enquiry. One of the benefits of PNR Number is that it is not necessary to carry your ticket. If you have your PNR confirmed with you, it gives you the added advantage that you can instantly board the plane. Visit the official website of your Airlines and enter your PNR number, so that you have all the correct information about your flight and have a comfortable journey.
+    </p>
+
+    <a href="{%url 'trans'%}"> <button class="btn btn-dark">Back</button></a>
+
+</div>
+</body>
+</html>
+{%endblock content%}

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# AUTH_USER_MODEL ='app.User'
+
 
 # Application definition
 
@@ -128,4 +130,8 @@ STATICFILES_DIRS=[
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
+# AUTH_USER_MODEL='app.CustomUser'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = 'login'
+

@@ -1,0 +1,31 @@
+<style>
+    body{background-color: antiquewhite;width: 1350px;height: 800px;}
+    .direct{width: 380px;height: 400px;margin-left: 500px;margin-top: 30px;border: 1px solid black;background-color:rgba(255, 255, 255, 0.2)}
+    #id_sender{margin-left: 30px;}
+    #id_recipient{margin-left: 13px;margin-top: 10px;}
+    #id_message_content{margin-left:30px;margin-top:10px;background-color:rgba(255, 255, 255, 0.3) ;}
+    label{margin-left: 80px;}
+    .direct h2{text-align: center;}
+    .direct button{margin-left: 150px;}
+
+</style>
+<div class="direct">
+    <h2>Send Messages</h2>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_sender">Sender:</label>
+        {{ form.sender }}
+    </div>
+    <div>
+        <label for="id_recipient">Recipient:</label>
+        {{ form.recipient }}
+    </div><br>
+    <div>
+        <label for="id_message_content">Message Content:</label>
+        {{ form.message_content }}
+    </div><br>
+    <button type="submit">Submit</button>
+</form>
+</div>
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{%load static%}
+<style>
+  /* body{background-color:rgb(199, 121, 121);height: 900px;width: 1200px;} */
+  body {background-image: url(https://images.hindustantimes.com/img/2023/01/10/1600x900/While-the-past-year-was-about-revenge-and-revival-_1673351689949.jpg);background-repeat: no-repeat;background-size: cover;}
+  /* .lg1{width: 1000px;height: 500px;background-color: antiquewhite ;border-radius: 20px;} */
+  .lo1{margin-left:130px;}
+  .lo1 h6{margin-top: 30px; margin-left: 20px;color:antiquewhite}
+  .login {border-radius: 10px;width: 200px;margin-left:800px ;height: 50px; margin-top: -50px;}
+  .login form { width: 350px; height: 250px; color: rgb(20, 110, 103); margin-left:-50px;margin-top:30px;
+    border-radius: 10px;background-color: rgba(255, 255, 255, 0.2); }
+  .login h4{margin-left: -20px;margin-top: 30px;}
+  .login button { margin-left: 120px;width: 100px; }
+  .a3 { width: 1240px; height: 100px; }
+  .username{margin-left: 30px;margin-top: 30px;}
+  .emailid{margin-left: 10px;}
+  .pass{margin-left: 30px;}
+  .hr{width: 30px}
+  .e1{margin-left: 28px;}
+  .login p{margin-left: 170px;}
+  .login h6{ margin-left:100px; }
+.lg1{height: 400px;}
+
+</style>
+
+<div class="a3"></div>
+<div class="lg1">
+  <div class="lo1">
+    <h6><i>"Travel is the only thing <br>you buy that makes you <br>richer"</i></h6>
+  </div>
+ <div class="login">
+   <h4><i><b>Login to your account<hr></b></i></h4> 
+   <form method="post" action="{%url 'login'%}">
+    
+    {% csrf_token %}
+    <label class="username">Username:&nbsp;</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label class="pass">Password:&nbsp;&nbsp;</label>
+    <input type="password" id="password1" name="password1" required><br><br>
+    <p><b><i>Forget password</i></b></p>
+    <button type="submit">Login</button>
+   </form>
+ </div>
+</div>
+
+{% endblock content %}

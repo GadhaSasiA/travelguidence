@@ -3,22 +3,55 @@
 {%block title%}index{%endblock title%}
 {%block content%}
 <style>
-    body{background-color:antiquewhite;}
-    .row{width:800px; height: 400px;margin-left: 200px;margin-top: 30px;}
+    body{background-color:antiquewhite;height:auto;}
+    .row{width:1000px; height: 1800px;margin-left: 200px;margin-top: 30px;}
     .card{margin-left: 10px;margin-top: 50px;}
     img{margin-top: 10px;}
+    .row button{float: left;margin-left: 10px;}
+    .last{margin-top: 1000px;}
     </style>
 
 <div class="row">
+    <h2><b><i>Our Guides</i></b></h2><hr>
     {%for g in guide%}
     <div class="card" style="width: 18rem;">
-        <img src="{{g.guide_photo}}" class="card-img-top" height="400px" alt="...">
+        <img src="{{g.guide_photo}}" class="card-img-top" height="200px" alt="...">
         <div class="card-body">
-        <h5 class="card-title">{{g.guide_name}}</h5>
-        <p class="card-text">{{g.about_guide}}.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <h6 class="card-title">{{g.guide_name}}</h6>
+        <h6 class="card-title">{{g.guide_email}}</h6> 
+        <!-- <p class="card-text">{{g.about_guide}}.</p> -->
+        <button class="btn btn-dark" onclick="showGuideDetails('{{ g.guide_name }}', '{{ g.guide_email }}', '{{ g.about_guide }}')">Details</button>
+        <a href="{%url 'dm'%}"> <button class="btn btn-dark">Direct message</button></a>
+    </div>
     </div>
     {%endfor%}
+    {% for guide in guidelist %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ guide.profile_image }}" class="card-img-top" height="200px" alt="Guide Photo">
+        <div class="card-body">
+            <h5 class="card-title">{{ guide.username }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ guide.email }}</h6>
+            <p class="card-text">{{ guide.about }}</p>
+            <button class="btn btn-dark" onclick="showGuideDetails('{{ guide.username }}', '{{ guide.email }}', '{{ guide.about }}')">Details</button>
+            <a href="{% url 'dm' %}"> <button class="btn btn-dark">Direct message</button></a>
+        </div>
+    </div>
+    {% endfor %}
 </div>
+
+<script>
+    function showGuideDetails(name, email, about) {
+        var message = "Name: " + name + "\nEmail: " + email + "\nAbout: " + about;
+        alert(message);
+    }
+</script>
+</div>
+<script>
+    function showGuideDetails(name, email, about) {
+        var message = "Name: " + name + "\nEmail: " + email + "\nAbout: " + about;
+        alert(message);
+    }
+</script>
+
+
 {%endblock content%}

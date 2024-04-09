@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Profile{% endblock title %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Guide Profile</title>
+</head>
+<body>
+    <h2>Create Guide Profile</h2>
+    <form method="post" action="{% url 'profile_guide' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Render required fields manually -->
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" id="id_username" value="{{ form.username.value }}"non-required>
+        <br>
+        <label for="id_email">Email:</label>
+        <input type="email" name="email" id="id_email" value="{{ form.email.value }}" non-required>
+        <br>
+        
+        <!-- Render non-required fields manually if they have value -->
+        {% if form.gender.value %}
+            <label for="id_gender">Gender:</label>
+            <input type="text" name="gender" id="id_gender" value="{{ form.gender.value }}"non-required>
+            <br>
+        {% endif %}
+        
+        {% if form.place.value %}
+            <label for="id_place">Place:</label>
+            <input type="text" name="place" id="id_place" value="{{ form.place.value }}"non-required>
+            <br>
+        {% endif %}
+        
+        {% if form.profile_image.value %}
+            <label for="id_profile_image">Profile Image:</label>
+            <input type="file" name="profile_image" id="id_profile_image"non-required>
+            <br>
+        {% endif %}
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+{% endblock content %}

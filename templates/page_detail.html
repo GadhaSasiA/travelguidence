@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block title%}{%endblock title%}
+{%block content%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ page.place_name }}</h2>
+            <img src="{{ page.image }}" class="img-fluid" alt="{{ page.place_name }}">
+            <p>{{ page.about }}</p>
+            <p>{{ page.features }}</p>
+            <p><small>Last updated: {{ page.last_updated }}</small></p>
+            {% if page.is_favorite %}
+                <p>This place is already in your favorites.</p>
+            {% else %}
+                <form action="{% url 'mark_as_favorite' page.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Add to Favorite</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{%endblock content%}

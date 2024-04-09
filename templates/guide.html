@@ -1,0 +1,21 @@
+<!-- guide_display.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Information</title>
+</head>
+<body>
+    <h1>Guide Information</h1>
+    <h2>Username: {{ guide.username }}</h2>
+    <h3>Email: {{ guide.email }}</h3>
+    <p>First Name: {{ guide.first_name }}</p>
+    <p>Last Name: {{ guide.last_name }}</p>
+    {% if guide.profile_image %}
+        <img src="{{ guide.profile_image.url }}" alt="Profile Image">
+    {% else %}
+        <p>No profile image available</p>
+    {% endif %}
+</body>
+</html>

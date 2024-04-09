@@ -1,0 +1,55 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ place.placename }} Reviews</title>
+    <style>
+        body{background-color: antiquewhite;}
+        .pr{width: 1300px;height:1000px;background-color: rgba(255, 255, 255, 0.3);;margin-left: 20px;margin-top: 30px;}
+        .card img{width: 1200px;margin-left: 40px;}
+        .icon{margin-top: 10px;}
+        .icon img{border-radius: 20px;}
+        .icon a{text-decoration: none;}
+        .icon h2{margin-left: 100px;margin-top: -25px;}
+        .card h1,h2,p{margin-left: 40px;}
+        .but{width:60px;height: 20px;background-color: brown;margin-left: 40px;border-radius: 10px;}
+        .but a{text-decoration: none;color: aliceblue;margin-left: 10px;}
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+        <a href="{%url 'index'%}" class="nav-link" href=""><h2><b><i>GK Travels</i></b></h2></a>
+    </div>
+    <div class="pr">
+        <h1>{{ place.placename }} Reviews</h1>
+        <h2>Place Details:</h2>
+    <div class="card mb-3">
+        <img src="{{ place.image_place.url}}" class="card-img-top" height="400px" alt="...">
+        <div class="card-body">
+            <h2 class="card-title">{{ place.placename }}</h2>
+            <p class="card-text">{{ place.about_place}}</p>
+            <p class="card-text">{{ place.place_features }}</p>
+        </div>
+    </div>
+    <h2>Reviews:</h2>
+    {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <h3> Name:{{ review.Your_name }}</h3>
+                <li>About place:{{review.about_place}}</li>
+                <li>Rating:{{review.rating}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews available.</p>
+    {% endif %}
+    <div class="but">
+     <a href="{% url 'keralam'%}" class="btn btn-primary">Back</a>
+    </div>
+</div>
+</body>
+</html>
+ 

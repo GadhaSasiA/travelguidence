@@ -1,25 +1,116 @@
-{%extends 'base.html'%}
-{%block title%}review{%endblock title%}
-{%block content%}
-<style>
-    body{background-color:antiquewhite;}
-    .rr{height: 130px;}
-</style>
-<body>
-    <div class="rr">
+    {% extends 'base.html' %}
+    {% block title %}Booking{% endblock title %}
+    {% block content %}
+    <style>
+        body{background-image: url(https://images.inc.com/uploaded_files/image/1920x1080/getty_583734066_335273.jpg)
+            ;background-size: cover;background-repeat: no-repeat;}
+        .review1{width: 500px; height:350px; margin-left: 450px;border: 1px solid black;text-align: center;}
+        
+       .aaa{height: 100px;}
+       .star-rating {
+    font-size: 0;
+}
 
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: orange;
+}
+
+    </style>
+
+<div class="aaa">
 </div>
-    <div class="container">
-        <h2>Write a Review</h2>
-        <form action="{%url 'review'%}" method="post">
-        <div class="form-group">
-                <h5>Place name:{{pl.place_name}}</h5>
-                <label for="opinions">Your Opinions:</label>
-                <textarea class="form-control" id="" rows="4" placeholder="Write your opinions here"></textarea>
-         
-            </div>
-            <button type="submit" class="btn btn-dark">Submit</button>
-        </form>
+<div class="review1">
+  <h3>Review</h3>
+  <form method="post" action="{% url 'review' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_Your_name" class="form-label">Your name</label>
+      {{ form.Your_name }}
     </div>
-</body>
-{%endblock content%}
+    <div class="mb-3">
+      <label for="id_place_name" class="form-label">Place Name</label>
+      {{ form.place_name }}
+    </div>
+    <div class="mb-3">
+      <label for="id_about_place" class="form-label">About Place</label>
+      {{ form.about_place }}
+    </div>
+    <div class="star-rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5" title="5 stars">&#9733;</label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4" title="4 stars">&#9733;</label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3" title="3 stars">&#9733;</label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2" title="2 stars">&#9733;</label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1" title="1 star">&#9733;</label>
+    </div>
+    <div class="mb-3">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+   <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Your name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="enter your name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">place Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" Enter place name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">About place</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">mark your rating</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="">
+  </div>
+  <button type="submit">Submit</button>
+  </form>
+  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

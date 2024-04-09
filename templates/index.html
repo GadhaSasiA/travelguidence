@@ -2,19 +2,168 @@
 {%load static%}
 {%block title%}index{%endblock title%}
 {%block content%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300&family=Dancing+Script:wght@600&family=Inconsolata&family=Josefin+Sans:ital,wght@0,400;0,700;1,300;1,400&family=Qwitcher+Grypen:wght@700&family=Raleway:ital,wght@0,200;1,300&family=Roboto+Mono:ital,wght@0,200;0,400;1,200&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
 <style>
-    body{background-image: url(https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?cs=srgb&dl=pexels-nubia-navarro-%28nubikini%29-386009.jpg&fm=jpg);background-size: cover;background-repeat: no-repeat;}
-  /* body{width: 1230px;height: 300px;} */
-  h2{color:rgb(5, 80, 94); margin-bottom: -40px;}
-    .carousel p{color:rgb(241, 61, 7); margin-bottom: -30px;}
-    .index1 img{width: 1340px;height: 400px;}
-    
+    /* body{background-image: url(https://www.sotc.in/blog/wp-content/uploads/2022/08/everest-1024x683.jpg)
+    ;background-size: cover;background-repeat: no-repeat;} */
+
+
+    h2{color:rgb(5, 80, 94); margin-bottom: -40px;}
+    .index1{height: 400px;margin-left: 15px;}
+          
+    /* .carousel p{color:rgb(241, 61, 7); margin-bottom: -30px;} */
+    .index1 img{width: 1320px;height: 500px;margin-top:-10px;}
+    .index1 h1{margin-left: 20px; margin-top:-200px;color: rgb(20, 20, 20);}
+    .index1 p{margin-left: 20px;margin-top: -5px;color: blue;}
+    /* .aaa{height:50px;} */
+    .bbb button{margin-left: -25px;}
+    .bbb button:hover{color: rgb(4, 87, 87);background-color: rgb(38, 243, 192);}
+    .bbb{margin-left: 20px;margin-top: -10px;}
+    .index1 b{color: rgb(178, 238, 241);}
+    .index2{margin-top:80px;width:1350px}
+    .index2 img{height: 300px;margin-top: 0px;}
+    .index2 h4{color: brown;text-align: center;margin-top: 120px;}
+    .index1 img{border-radius:5px;}
+
+    .carousel-inner{height: 400px;}
+    .card1{float: left;margin-left: 10px;margin-top: 40px;}
+    .card2{float: left; margin-left: 10px;margin-top: 40px;}
+    .card3{float: right; margin-left: 10px;margin-right: 12px;margin-top: 40px;}
+
+    .det{width: 1340px;height:300px; margin-top: 380px;}
+    .det1{width:440px;float:left;height:330px;margin-left: 10px;}
+    .det2{ width: 440px;float: left;height: 330px;}
+    .det3{width: 440px;float: left;height: 330px;}
+    .det img{margin-left: 120px;margin-top:20px;width:200px;height: 200px;}
+    .det p{margin-left: 50px;margin-top: 8px;}
+
+
+  
+    .last{margin-top: 800px;}
+    .guide1{height: 800px;margin-top:30px; margin-left:-1130px;width: 1320px;}
+    .guide1 img{width: 1320px;height: 400px;margin-top:10px;border-radius: 10px;}
+    .guide1 h1{margin-left: 20px; margin-top:-220px;color: rgb(233, 176, 55);}
+    .guide1 p{margin-left: 20px;margin-top: -5px;color: rgb(4, 87, 136);}
+    .guide1 button:hover{color: rgb(4, 87, 87);background-color: rgb(240, 198, 147);}
+
+    .user1{height: 400px;margin-top: -130px;margin-left: 20px;}
+    .user1 img{width: 1300px;height: 500px;margin-top:10px;border-radius: 10px;margin-left: 5px;}
+    .user1 h1{margin-left: 20px; margin-top:-220px;color: rgb(233, 176, 55);}
+    .user1 p{margin-left: 20px;margin-top: -5px;color: rgb(4, 87, 136);}
+
+    .g1{width: 1100px;height: 80px;margin-top: 130px;}
+    .g1 img{width:40px;height: 40px;margin-left:10px;margin-top:-40px;}
+
+    .g1 ul{margin-left:-200px;}
+
 </style>
+
 <body>
-<div class="index1">
- <!-- <img src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?cs=srgb&dl=pexels-nubia-navarro-%28nubikini%29-386009.jpg&fm=jpg"> -->
-   
-</div>
-</body>
+ 
+  <!-- <div class="aaa"></div> -->
+  {% if request.session.gid %}
+
+    <div class="guide1">
+      <img src="https://st2.depositphotos.com/1312284/48274/i/450/depositphotos_482742302-stock-photo-flat-lay-design-travel-concept.jpg" >
+      <h1>Welcome{{guide_profile.username}} to <B><B><i>GK TRAVELS</i></B></B></h1>
+      <p><i>explore the world with us...</i></p>
+      <div class="bb1">
+        <a href="" ><button type="button" class="btn btn-light ml-3">know more</button></a>
+        </div>
+    </div>
+
+  {% elif request.session.uid %}
+    <div class="user1">
+        <img src="https://st2.depositphotos.com/1312284/48274/i/450/depositphotos_482742302-stock-photo-flat-lay-design-travel-concept.jpg" >
+        <h1>Welcome to <B><B><i>GK TRAVELS</i></B></B></h1>
+        <p><i>explore the world with us...</i></p>
+        <div class="bbb">
+          <a href="" ><button type="button" class="btn btn-light ml-3">know more</button></a>
+        </div>
+    </div>
+  {%else%}
+    <div class="index1">
+      <img src="https://www.sotc.in/blog/wp-content/uploads/2022/08/everest-1024x683.jpg" >
+      <h1>Welcome to <B><B><i>GK TRAVELS</i></B></B></h1>
+      <p><b><i>explore the world with us...</i></b></p>
+      <div class="bbb">
+        <a href="{% url 'about'%}" ><button type="button" class="btn btn-light ml-3">know more</button></a>
+      </div>
+    </div><br><br><br><br>
+    <div class="index2">
+      <h4>TRENDING DESTINATIONS</h4>
+      <div class="card1">
+      <div class="card" style="max-width: 440px; height: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{%static 'image/pic01.jpg'%}" class="img-fluid rounded-start"  alt="...">
+          </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"> Taj Mahal</h5>
+            <p class="card-text">The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan to house the tomb of his beloved wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself</p>
+          </div>
+        </div>
+      </div>
+    </div></div>
+
+      <div class="card2">
+      <div class="card mb-3" style="max-width: 430px; height: 300px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{%static 'image/pic03.jpg'%}" class="img-fluid rounded-start"   alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> Paris</h5>
+              <p class="card-text">France's magnetic City of Light is a perennial tourist destination, drawing visitors with its iconic attractions, like the Eiffel Tower and the Louvre, and its unmistakable je ne sais quoi. Quaint cafes, trendy shopping districts and Haussmann architecture give Paris its timeless beauty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="card3">
+        <div class="card mb-3" style="max-width: 430px; height: 300px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="{%static 'image/pic3.jpeg'%}" class="img-fluid rounded-start"   alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"> London</h5>
+                <p class="card-text">London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River,</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+        <div class="det">
+          <div class="det1">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLih5weeW-60fwqi4BtuP9LqKIiAxRB-IOnHFYLCamkZ2sKZNuYbSi5okBWHD1IdAVDGQ&usqp=CAU">
+          <p><i><b>“The world is a book and those who do not travel read only one page.” </b></i> ...</p>
+          </div> 
+          <div class="det2">
+          <img src="https://png.pngtree.com/png-vector/20191120/ourmid/pngtree-travelling-around-the-world-icon-simple-style-png-image_2003090.jpg"width="200px" height="200px">
+          <p><i><b>Life is short and the world is wide. Better get started.</b></i></p>
+          </div>
+
+          <div class="det3">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/023/133/602/small/man-traveling-logo-black-and-white-vector.jpg"width="200px" height="200px">
+            <p><i><b>“Travel far enough, you meet yourself.” ...</b></i></p>
+          </div>
+        </div>
+        
+
+        
+ {%endif%}
+  </div>
+  </body>
 {%endblock content%}
+

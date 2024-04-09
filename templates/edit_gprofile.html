@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body{background-color: antiquewhite;}
+        .gp{width: 370px;height: 400px;margin-top: 50px;margin-left: 500px;border: 1px solid black;}
+        label{margin-left: 20px;margin-top: 20px;}
+        #id_username{margin-left: 30px;}
+        #id_gender{margin-left: 45px;margin-top: 20px;}
+        #id_place{margin-left: 55px;margin-top: 20px;}
+        #id_email{margin-left: 50px;margin-top: 20px;}
+        .gp button{margin-left: 100px;margin-top: 20px;}
+        h1{text-align: center;}
+
+
+
+    </style>
+</head>
+<body>
+ <div class="gp">
+    <h1>Edit Profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Render each form field individually -->
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" id="id_username" value="{{ form.username.value }}">
+        <br>
+        <label for="id_gender">Gender:</label>
+        <input type="text" name="gender" id="id_gender" value="{{ form.gender.value }}">
+        <br>
+        <label for="id_place">Place:</label>
+        <input type="text" name="place" id="id_place" value="{{ form.place.value }}">
+        <br>
+        <label for="id_email">Email:</label>
+        <input type="email" name="email" id="id_email" value="{{ form.email.value }}">
+        <br><br>
+        <label for="id_profile_image">Profile Image:</label>
+        <input type="file" name="profile_image" id="id_profile_image">
+        <br>
+        
+        <button type="submit">Save Changes</button>
+    </form>
+ </div>
+</body>
+</html>

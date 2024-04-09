@@ -1,0 +1,41 @@
+{% block title %}{% endblock title %}
+{%load static%}
+{% block content %}
+<style>
+  body{background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);background-size: cover;background-repeat: no-repeat;}
+    .card{width: 250px;height:260px;margin-left: 20px;margin-top: 10px;
+      border: 1px solid black;background-color: rgba(255, 255, 255, 0.5);margin-left: 20px;float: left;}
+    .aaa{margin-top: -30px;}
+    .row{width: 1280px;margin-left:10px; margin-top:50px;}
+    .card-body p{background-color: rgba(255, 255, 255, 0.0);}
+    .msgbar img{border-radius: 10px;margin-top: 35px;}
+  .msgbar h3{margin-left: 106px;margin-top: -30px;}
+  .msgbar a{text-decoration: none;}
+  .row h2,h5,p,h4{margin-left: 20px;}
+  </style>
+<div class="aaa">
+
+</div>
+<div class="msgbar">
+  <a href="{%url 'index'%}"><img src="{% static 'image/logo.03.jpg' %}" alt="Your Logo" width="120px" height="80px"></a>
+  <a href="{%url 'index'%}" class="nav-link" href=""><h3><b><i>GK Travels</i></b></h3></a>
+</div>
+<div class="row">
+  <h2><b><i>Messages</i></b></h2><hr>
+{%for m in mess%}
+ <div class="card">
+    <div class="card-header">
+      <h4>Messages</h4><hr>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Name: {{m.name}}</h5>
+      <p class="card-text"><B> EMAIL ID: </B>{{m.email}}</p>
+      <p class="card-text"><b>Message :</b>{{m.message}}</p>
+      <a href="{}" class="btn btn-primary">Replay</a>
+
+    </div>
+  </div>
+{%endfor%}
+
+</div>
+{% endblock content %}

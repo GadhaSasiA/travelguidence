@@ -1,9 +1,48 @@
 from django import forms
-from .models import mail,fb,InstaUser
+# from .models import
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from . models import User
+from django.contrib.auth.forms import AuthenticationForm
 
+from.models import mail,fb,InstaUser,Train,Messages,Vehiclebooking,Popular
+from guide_app.models import guide_reg
+from user_app.models import User_reg
+
+
+
+
+# class guideSignupForm(UserCreationForm):
+#     email = forms.EmailField(max_length=255, required=True)    
+#     profile_image = forms.ImageField(required=False)
+#     first_name = forms.CharField(max_length=30)
+#     last_name = forms.CharField(max_length=30)
+
+#     class Meta:
+#         model = CustomUser
+#         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2','profile_image']
+
+
+class guideSignupForm(forms.ModelForm):
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
+    class Meta:
+        model = guide_reg
+        fields = ['username', 'gender', 'place', 'email','profile_image', 'password1', 'password2']
+
+class userSignupForm(forms.ModelForm):
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
+    class Meta:
+        model = User_reg
+        fields = ['username', 'gender', 'place', 'email','profile_image','password1', 'password2'] 
+
+
+# class LoginForm(forms.Form):
+#     email = forms.EmailField()
+#     password1 = forms.CharField(widget=forms.PasswordInput)
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField()
+    password1 = forms.CharField(widget=forms.PasswordInput) 
 
 
 class mail(forms.ModelForm):
@@ -32,6 +71,15 @@ class fb(forms.ModelForm):
             }
         
 
+class TrainForm(forms.ModelForm):
+    class Meta:
+        model = Train
+        fields = ['username','from_place', 'to_place', 'date_and_time', 'select_class']
+        widgets = {
+            'date_and_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+  
+
 
 class InstaForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
@@ -42,78 +90,46 @@ class InstaForm(forms.ModelForm):
         labels = {
             'in_userid': "Username",
         }
+
+class MessagesForm(forms.ModelForm):
+    class Meta:
+        model = Messages
+        fields = ['name', 'email', 'message']
+
+
+      
 class SearchForm(forms.Form):
     query = forms.CharField(label='Search', max_length=100)
 
-# class Loginform(forms.Form):
-#     username=forms.CharField()
-#     password=forms.CharField(widget=forms.PasswordInput)
 
 
-    
-# from django import forms
-# from django.contrib.auth.models import User
 
-# class RegisterForm(forms.ModelForm):
-#     password = forms.CharField(widget=forms.PasswordInput)
 
+# class SignUpForm(UserCreationForm):
 #     class Meta:
-#         model = User
-#         fields = ['username', 'email', 'password']
+#         model = CustomUser
+#         fields = ['username', 'email', 'password1', 'password2', 'user_type']
+
+# class LoginForm(AuthenticationForm):
+#     class Meta:
+#         model = CustomUser
+#         fields = ['username', 'password']
+    
 
 
-class LoginForm(forms.Form):
-    username=forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
-
-    password=forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
 
 
-class SignUpForm(UserCreationForm):
-    username=forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
-
-    password1=forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
-
-    password2=forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
-
-    email=forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class":"form-control"
-            }
-        )
-    )
-
-
+class BusbookingForm(forms.ModelForm):
     class Meta:
-        model=User
-        fields=('username','email','password1','password2','is_admin','is_guide','is_user')
+        model = Vehiclebooking
+        fields = ['username', 'phonenum', 'Email', 'numof_persons', 'address', 'choose_vehicles', 'pickup_date', 'picup_at', 'drop_date', 'drop_at']
+        widgets = {
+            'pickup_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'drop_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+class FavoriteForm(forms.ModelForm):
+    class Meta:
+        model = Popular
+        fields = ['is_favorite']
+        widgets = {'is_favorite': forms.CheckboxInput()}

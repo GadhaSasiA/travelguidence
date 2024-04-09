@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}addguide{%endblock title%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Guide</title>
+    <style>
+        body{background-color: antiquewhite;}
+        .add{width: 400px;height: 300px;margin-top: 200px;margin-left: 100px;background-color: aqua;}
+    </style>
+</head>
+<body>
+    <div class="add">
+        <h1><b>>Add <i>{{ guide_name }}</i> as guide</b></h1>
+        <button type="submit">YES</button>
+        <button type="submit">NO</button>
+    </div>
+</body>
+</html>
+{%endblock content%}

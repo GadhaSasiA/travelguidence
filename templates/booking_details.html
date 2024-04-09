@@ -1,19 +1,45 @@
-{%extends 'base.html'%}
-{%block title%}{%endblock title%}
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Booking Information</title>
 <style>
-    body{color: rgb(223, 194, 68);}
-    h1{text-align: center;color: brown;}
+    body{background-color: antiquewhite;}
+    .bookingdetails{width: 500px;height: 300px;background-color: aquamarine;}
 </style>
+
+</head>
 <body>
-    <h1>Informations are successfully uploaded</h1>
+    <div class="bookigdetails">
+    <h1>Hello {{ user_name }} Your Booking Informations are</h1>
+    <h2>Successfully Registerd.</h2>
+
+    {% for booking in user_bookings %}
+    <div class="card">
+        <div class="card-header">
+            <h2>Booking Info</h2>
+            <hr>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">Name: {{ booking.users_name }}</h3>
+            <p class="card-text"><b>Email:</b> {{ booking.email_id }}</p>
+            <p class="card-text"><b>Phone Number:</b> {{ booking.phone_number }}</p>
+            <p class="card-text"><b>Date:</b> {{ booking.date }}</p>
+            <p class="card-text"><b>Selected Destinations:</b></p>
+            <ul>
+                <li>{{ booking.select_Popular_destinations }}</li>
+                <li>{{ booking.select_india_destinations }}</li>
+                <li>{{ booking.select_kerala_destinations }}</li>
+            </ul>
+            <p class="card-text"><b>Guide:</b> {{ booking.guide_name }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    
+
+</div>
+
+
 </body>
 </html>
-{% endblock content %}

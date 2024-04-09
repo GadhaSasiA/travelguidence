@@ -1,0 +1,267 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+
+      {% endblock title %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet"
+      href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css
+">
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+      <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+<style>
+  /* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5_jsDqUeA6JrZhPDFJXZnhmH20hoJfHroA&usqp=CAU */
+  /* body{width: 1230px;background-image: url(https://media.istockphoto.com/id/1415179589/photo/jet-flight-travel-concept-stock-photo-airplane-fly-above-amazing-blue-misty-mountain.jpg?s=612x612&w=0&k=20&c=z9CF3SZgF18s1FJwEIjFomf5jAQ8wweE2FP30GnKDoc=);width: 1600px;height: 400px;} */
+  /* body{background-color: antiquewhite;width: 1350px;height:auto;} */
+    ul{margin-left:-150px;}
+   .bar1{width:1230px;}
+   .bar{width: 700px;height:28px;float: left;}
+   .bar h4{color: rgb(4, 121, 111);margin-top:-60px;margin-left: 80px;}
+   .bar h4:hover{color: brown;}
+    /* .log a{display: inline;text-decoration: none;float: right;margin-right:30px; */
+    /* border-radius: 60px;color: rgb(3, 73, 64);margin-top: -7px;height: 50px;} */
+    .logo{width:250px;height:28px;float: right;margin-right:-140px;}
+    .logo img{margin-right: 10px;margin-top:4px;}
+    /* .logo h4{float: left;color:rgb(4, 90, 78);} */
+    /* .bottom{margin-bottom: 2px;} */
+    .logo a{float: left;color: rgb(24, 97, 74);display: inline;text-decoration: none;
+      margin-left: 20px;}
+    /* .log{width: 600px;float: right;margin-right: 10px;height: 28px;} */
+    /* .log a:hover{color: rgb(7, 250, 116);} */
+    .logo a:hover{color: rgb(7, 240, 85);}
+    .navbar{float: left;width: 1100px;}
+    .nav-item{margin-right:5px;float:right; border-radius:15px;margin-top:px;margin-left:1px;}
+    .collapse {margin-left: 450px;}
+    .top{width:1200px;height:40px;float: right;margin-right: 105px;}
+    #placeDropdown{background-color: rgb(15, 15, 20);color:black;border: none;
+      background-color: transparent; }
+    .logo h5{margin-top: -6px;}
+   .dropdown-menu{color:black;border-color: transparent;
+      background-color: transparent;}
+    .dropdown{background-color: rgb(15, 15, 20);color:black;border: none;
+      background-color: transparent;border-color: transparent; border-radius: 8px;margin-left: 5px; }
+   .dropdown a{border:transparent;margin-top: 5px;}
+   .nav-itemadd{text-decoration: none;margin-top:180 ; margin-left:130px;}
+   .nav-itemadd ul{text-decoration: none;}
+   #search{width: 130px;margin-right:10px;border: 1px solid black;margin-top: 10px;border-radius: 10px;}
+   .search{float: right;margin-top: -40px; }
+   .search button{ float: right;margin-right: 15px;height: 30px;margin-top: 10px;border-radius: 5px;}
+   .navlog{margin-left: 10px;}
+   .dropdownp{margin-left: 5px; border-radius:8px;}
+   .bar img{margin-left:-32px;margin-top:-20px;border-radius: 16px;}
+   .logo h6{margin-top:5px;}
+   .top a:hover{color: rgb(4, 71, 66);background-color: rgb(148, 216, 193);border-radius:15px;}
+   .dropdownp ul{margin-left: 700px;}
+   .dropdownp:hover{background-color: rgb(148, 216, 193);}
+   .dropdown:hover{background-color: rgb(148, 216, 193);}
+   .dropdowns ul{margin-left:650px}
+   .navimage{width: 1350px;height: 300px;}
+   /* .dropdownb ul{margin-left: 550px;}
+   .dropdowna ul{margin-top: -750px;}
+   .dropdown-item{width: 127px;} */
+
+   .g1{width: 1350px;height: 600px;}
+   .g1 img{width: 1350px;height: 600px;margin-left: -55px; margin-top: 70px;}
+   /* .g2{margin-top: -650px;} */
+
+</style>
+</head>
+<body>
+ 
+  <div class="bar1">
+    <div class="bar">
+    <a href="{%url 'index'%}"><img src="{% static 'image/logo3.jpg' %}" alt="Your Logo" width="200px" height="120px"></a>
+    <a href="{%url 'index'%}" class="nav-link" href=""><h4><b><i>GK Travels</i></b></h4></a>
+  </div>
+  <div class="logo">
+   <a href="{%url 'mail'%}"><img src="{% static 'image/maillogo.png' %}" alt="Your Logo" width="20px" height="15px"></a>
+    <a href="{%url 'fb'%}"><img src="{% static 'image/fblogo.png' %}" alt="Your Logo" width="20px" height="15px"></a>
+    <a href="{%url 'insta'%}"><img src="{% static 'image/instalogo.png' %}" alt="Your Logo" width="20px" height="15px"></a>
+  
+      <a href="{%url 'loginn'%}" class=" navlog-link text-succsess" href=""><h6><i><i>LOGIN </i></i></h6></a>
+      <a href="{%url 'register'%}" class=" navlog-link text-succsess" href=""><h6><i>REGISTER</i></h6></a>
+      <div class="dropdown">
+        <a class="btn btn-transparent dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <b><i>LOGIN</i></b>
+        </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{%url 'loginn'%}">LOGIN</a></li>
+            <li><a class="dropdown-item" href="{%url 'logout'%}">LOGOUT</a></li>
+
+          </ul>
+        </div>
+      <div class="dropdown">
+        <a class="btn btn-transparent dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <b><i>REGISTER</i></b>
+        </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{%url 'register'%}">GUIGE</a></li>
+            <li><a class="dropdown-item" href="{%url 'register_user'%}">USER</a></li>
+
+          </ul>
+        </div>
+    </div>
+   
+  </div>
+  <div class="top">
+    <nav class="navbar  navbar-expand-md">
+      <div class="container">
+        <div class="col-2 text-left pl-md-0">
+
+
+        <div class="collapse navbar-collapse justify-content-centercol-md-8 navbar-collapse-3">
+          <ul class="navbar-nav justify-content-center  fw-bold">
+            <li class="nav-item active">
+              <a href="{%url 'home'%}" class="nav-link text-dark" href=""><i>Home</i> </a>
+            </li>
+            <li class="nav-item">
+              <a href="{%url 'about'%}" class="nav-link text-dark" href=""><i>About</i></a>
+            </li>
+           
+          </ul></div>
+       {% if request.session.gid %}
+          <div class="g1">
+             <div class="collapse navbar-collapse justify-content-centercol-md-8 navbar-collapse-3">
+              <ul class="navbar-nav justify-content-center  fw-bold">
+                <li class="nav-item active">
+                  <a href="{%url 'bookinginfo'%}" class="nav-link text-dark" href=""><i>Booking info</i> </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{%url 'revshow'%}" class="nav-link text-dark" href=""><i>Reviews</i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="{%url 'revshow'%}" class="nav-link text-dark" href=""><i>Complaints</i></a>
+                </li>
+               
+              </ul>
+            </div>
+          </div>
+        {% elif request.session.uid %}
+
+            <div class="dropdownb">
+              <a class="btn btn-transparent dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <b><i>Booking</i></b>
+              </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{%url 'booking'%}">Book now</a></li>
+                  <li><a class="dropdown-item" href="{%url 'complaints'%}">Complaints</a></li>
+
+                </ul>
+              </div>
+              <div class="dropdowns">
+                  <a class="btn btn-transparent dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <b><i>Service</i></b>
+                  </a>
+                
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{%url 'guidelist'%}">Guide info</a></li>
+                    <li><a class="dropdown-item" href="{%url 'trans'%}">Transportation</a></li>
+                    <li><a class="dropdown-item" href="{%url 'faq'%}">FAQ</a></li>
+                  </ul>
+                </div>
+              
+               <div class="dropdownp">
+                  <a class="btn btn-transparent dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <b><i>Destinations</i></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{%url 'popular'%}">Popular places</a></li>
+                    <li><a class="dropdown-item" href="{%url 'india'%}">India</a></li>
+                    <li><a class="dropdown-item" href="{%url 'keralam'%}">Kerala</a></li>
+                  </ul>
+                </div>
+            
+            <script>
+                function navigateToDestination() {
+                    var dropdown = document.getElementsByClassName("placeDropdown");
+                    var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+            
+                    if (selectedValue) {
+                        window.location.href = selectedValue;
+                    }
+                }
+            </script> 
+            
+         
+          </ul>
+          </div>
+          </div>
+    
+       {%else%}
+        <div class="collapse navbar-collapse justify-content-centercol-md-8 navbar-collapse-3">
+          <ul class="navbar-nav justify-content-center  fw-bold">
+            <li class="nav-item active">
+              <a href="{%url 'home'%}" class="nav-link text-dark" href=""><i>Home</i> </a>
+            </li>
+            <li class="nav-item">
+              <a href="{%url 'about'%}" class="nav-link text-dark" href=""><i>About</i></a>
+            </li>
+             <li class="nav-item">
+              <a href="{%url 'review'%}"class="nav-link text-dark" href="">Review</a>
+            </li> 
+          </ul></div>
+      </nav>
+    </div>
+    <div class="search">
+      <form class="d-flex rounded text-light" role="search" action="{%url 'search_view'%}">
+        <input type="text" id="search" name="query" value="{{ query }}" placeholder="search for more ">
+          <button type="submit">Search</button>
+      </form>
+    </div>
+
+  
+    </div>
+    {% endif%}
+
+  </div>
+  
+</div>
+
+  
+  
+{% block content %}
+
+{% endblock content %}
+
+
+
+
+
+
+
+<div class="bottom h-500">
+    <section class="fixed-bottom">
+      <footer class="pt-2 pb-2  bg-dark text-light">
+        <div class="container">
+          <div class="row1 align-items-center">
+            <div class="col-12 col-md-8">
+              <h4></h4>
+            </div>
+            <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
+             <h5> © 2023 GK Travels. All Rights Reserved</h5>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+
+  </body>
+
+</html>

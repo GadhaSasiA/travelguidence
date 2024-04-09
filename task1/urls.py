@@ -19,12 +19,15 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
    
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
-    path('', include('guide_app.urls')),
-    path('', include('user_app.urls')),
+    path('guide_app', include('guide_app.urls')),
+    path('user_app', include('user_app.urls')),
+    # path('', include('django.contrib.auth.urls')),  # Include Django's authentication URLs
+
 
 
 

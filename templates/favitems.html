@@ -1,0 +1,39 @@
+
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}fav{%endblock title%}
+{%block content%}
+<style>
+    /* body{background-color: antiquewhite;}
+    .fav{width: 1300px;height:auto;margin-top: 50px;}
+    .card{width: 400px;margin-left: 80px;} */
+    body{background-color:antiquewhite;height: auto;}
+    .fav{width:1300px; height: 1000px;margin-left: 30px;float: left;}
+    .card{margin-left:30px;margin-top: 30px;width: 400px;height: 500px; float: left;}
+    .last{margin-top: 1100px;}
+</style>
+
+<body>
+ <div class="fav">
+    <h1><i>Favorite Items</i></h1>
+    {% for favorite_destination in favorite_destinations %}
+        <div class="card mb-3">
+            <img src="{{ favorite_destination.image.url }}" class="card-img-top" height="400px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ favorite_destination.place_name }}</h5>
+                <!-- <p class="card-text">{{ favorite_destination.about }}</p>
+                <p class="card-text">{{ favorite_destination.features }}</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+                <a href="{% url 'review'%}" class="btn btn-dark">Review</a>
+
+                <a href="{% url 'place_review' favorite_destination.id %}" class="btn btn-dark">About</a>
+
+                <a href="{% url 'remove_fav' favorite_destination.id %}" class="btn btn-danger">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+   </div> 
+</body>
+{%endblock content%}

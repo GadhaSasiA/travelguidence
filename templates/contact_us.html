@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}contact us{%endblock title%}
+{%block content%}
+<style>
+    body {height: 1300px;}
+    /* .us{width: 1300px;height: 310px;margin-top: 80px;margin-left: 20px;} */
+    /* .contact_us h1{margin-top: -100px;} */
+    .contact_us img{margin-left: 80px;}
+    .contact{height: 250px;width: 1200px;margin-left: 80px;background-color: antiquewhite;}
+    .contact1{width: 400px;height: 80px;background-color:  rgba(255, 255, 255, 0.5);float: left;border-radius: 10px;margin-top: 20px;margin-left: 60px;}
+    .contact2{width: 150px;height: 80px;background-color: rgba(255, 255, 255, 0.5);float: left;border-radius: 10px;margin-left: 60px;margin-top: 20px;}
+    .contact3{width: 400px;height: 80px;background-color:  rgba(255, 255, 255, 0.5);float: left;border-radius: 10px;margin-left: 60px;margin-top: 20px;}
+    .contact h5,p{margin-left: 40px;}
+    .cous{width: 500px; height: 200px; margin-top: -130px;margin-left: 400px;}
+    .cous p{margin-top: 30px;}
+    .one h1{margin-top: -60px;text-align: center;color:  rgba(255, 255, 255, 0.9)}
+    .con{width: 1200px;height: 400px;background-color: rgba(255, 255, 255, 0.3);margin-left: 80px;margin-top: -80px;}
+    .con form{margin-left: 160px;margin-top: -400px;}
+    .con img{margin-left: -1px;}
+    .con3{margin-left: 120px;}
+    .con button{margin-left: 90px;}
+    .area textarea{background-color: rgba(250, 242, 242, 0.0);margin-left:3px;width: 300px;height: 150px;border-radius: 10px;}
+    label, input {
+    background-color: rgba(255, 255, 255, 0.0);border-radius: 10px;}
+    
+
+</style>
+<div class="contact_us">
+    <img src="https://st2.depositphotos.com/1312284/48274/i/450/depositphotos_482742302-stock-photo-flat-lay-design-travel-concept.jpg" width="1200px"height="300px">
+<div class="one">
+    <h1><B><I>CONTACT US</I></B></h1>
+</div>
+    <div class="contact">
+        <div class="contact1">
+            <h5><i>HOURSE OF OPERATION</i></h5>
+            <p><i>9:00AM to 8:00PM,Mon-Fri(Excluding Holidays)</i></p>
+        </div>
+        <div class="contact2">
+            <h5><i>PHONE</i></h5>
+            <p><i>+91 9087654321</i></p>
+        </div>
+        <div class="contact3">
+            <h5><i>GENERAL ENQUERIES</i></h5>
+            <p><i>info.gktravelguidence.com</i></p>
+        </div>
+    </div>
+    <div class="cous">
+        <p><b>Our customer service team is waiting to assist you</b><br>
+        You can also check your booking status through our websites</i></p>
+    </div>
+
+    <div class="con">
+        <img src="https://media.istockphoto.com/id/1418045846/photo/email-phone-website-contact-us-website-banner-marketing.webp?b=1&s=170667a&w=0&k=20&c=Ln3XGXD1qDcQOu5igbrB7TY2_T-pOI2lGy0y-RHu87Y=" width="1200px"height="400px">
+        <form method="post" action="{%url 'contact_us'%}">
+            <h3>Contact us</h3><br>
+
+            {%csrf_token%}
+            <label class="con1"><b><i>Name:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label>{{form.name}}
+            <br><br>
+            <label class="con2"><b><i>Email:&nbsp;&nbsp;&nbsp;&nbsp;</i></b></label>{{form.email}}
+            <br><b></b><br>
+            <label for="message" class="con3"><b><i>Message:</i></b></label>
+            <div class="area" >{{form.message}}</div>
+            <button type="submit">Send message</button>
+        </form>
+    </div>
+{%endblock content%}
